@@ -1,0 +1,95 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="10dp">
+
+		<LinearLayout
+			android:id="@+id/linear3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:gravity="center_horizontal"
+			android:orientation="horizontal"
+			android:padding="4dp">
+
+			<TextView
+				android:id="@+id/textview1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:focusable="false"
+				android:padding="8dp"
+				android:text="@string/choose_your_side_label"
+				android:textColor="#000000"
+				android:textSize="30sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/linear4"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:orientation="horizontal"
+			android:padding="5dp">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal"
+				android:orientation="horizontal">
+
+				<Button
+					android:id="@+id/buttonX"
+					style="@android:style/Widget.Material.Light.ImageButton"
+					android:layout_width="100dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="start|center_vertical"
+					android:layout_margin="5dp"
+					android:background="@drawable/rounded_button"
+					android:elevation="5dp"
+					android:focusable="false"
+					android:padding="5dp"
+					android:src="@drawable/ic_clear_white"
+					android:text="✕"
+					android:textColor="#000000"
+					android:textSize="30sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal"
+				android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonO"
+                    style="@android:style/Widget.Material.ImageButton"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_button"
+                    android:elevation="5dp"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_panorama_fisheye_white"
+                    android:text="◯"
+                    android:textAppearance="@android:style/TextAppearance.Theme.Dialog"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+			</LinearLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

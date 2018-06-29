@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_login">כניסה</string>
+    <string name="prompt_email">אימייל</string>
+    <string name="prompt_password">סיסמה (אופציונלי)</string>
+    <string name="action_sign_in">כנס או הירשם</string>
+    <string name="action_sign_in_short">כניסה</string>
+    <string name="error_invalid_email">אימייל זה שגוי</string>
+    <string name="error_invalid_password">הסיסמה קצרה מדי</string>
+    <string name="error_incorrect_password">הסיסמה שגויה</string>
+    <string name="error_field_required">שדה זה נחוץ</string>
+    <string name="permission_rationale">הרשאת אנשי קשר דרושה על מנת לספק השלמה אוטומטית של אימייל</string>
+    <string name="hello_blank_fragment">פרגמנט ריק</string>
+    <string name="default_notification_channel_id">עדכוני MoonHome</string>
+    <string name="moonhome_version_label">גרסת MoonHome</string>
+    <string name="check_for_update">חפש עדכונים</string>
+    <string name="contact_us">צור קשר</string>
+    <string name="whats_new_label">מה חדש?</string>
+    <string name="retrieving_data">מקבל נתונים…</string>
+    <string name="credits_and_oss_licenses_label">תודות ורשיונות קוד פתוח</string>
+    <string name="made_with_sketchware">יוצר בעזרת Sketchware</string>
+    <string name="copyrights_notice">© 2018 Moonface כל הזכויות שמורות</string>
+    <string name="updated_notice">MoonHome מעודכן</string>
+    <string name="event_title_hint">כותרת האירוע</string>
+    <string name="all_day_label">כל היום</string>
+    <string name="starting_time_label">זמן התחלה:</string>
+    <string name="ending_time_label">זמן סיום:</string>
+    <string name="location_hint">מיקום</string>
+    <string name="address_hint">כתובת</string>
+    <string name="description_hint">תיאור</string>
+    <string name="add_event_label">הוסף אירוע</string>
+    <string name="cannot_save_event_message">לא ניתן לשמור אירוע!</string>
+    <string name="title_too_short_message">הכותרת קצרה מדי!</string>
+    <string name="title_too_long_message">הכותרת ארוכה מדי!</string>
+    <string name="location_too_long_message">המיקום ארוך מדי!</string>
+    <string name="event_saved_successfully">האירוע נשמר בהצלחה!</string>
+    <string name="event_deleted_successfully">האירוע נמחק בהצלחה!</string>
+    <string name="photo">תמונה</string>
+    <string name="video">וידאו</string>
+    <string name="cannot_load_preview_message">לא ניתן לטעון תצוגה מקדימה</string>
+    <string name="permission_denied_message">הבקשה נדחתה</string>
+    <string name="from_label">מאת</string>
+    <string name="to_label">ל</string>
+    <string name="subject_hint">נושא</string>
+    <string name="content_hint">תוכן</string>
+    <string name="sides_label">צדדים:</string>
+    <string name="roll_button">גלגל</string>
+    <string name="read_less">פחות מידע</string>
+    <string name="read_more">מידע נוסף</string>
+    <string name="verified_by_moonguard">אומת על ידי MoonGuard</string>
+    <string name="uninstall_button">הסר</string>
+    <string name="open_button">פתח</string>
+    <string name="install_button">התקן</string>
+    <string name="rate_game">דרג משחק</string>
+    <string name="new_game_button">משחק חדש</string>
+    <string name="share_using_label">שתף באמצעות</string>
+    <string name="load_app_error_message">לא ניתן למצוא מסך ראשי</string>
+    <string name="exit">יציאה</string>
+    <string name="exit_dialog_message">האם ברצונך לצאת?</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="no_support_speech">מכשירך אינו תומך בקלט דיבור</string>
+    <string name="speech_search_label">חפש ברשת</string>
+    <string name="camera">מצלמה</string>
+    <string name="gallery">גלריה</string>
+    <string name="profile_photo_dialog_title">תמונת פרופיל מ…</string>
+    <string name="sign_in_message">כנס עכשיו</string>
+    <string name="message_too_short">ההודעה קצרה מדי!</string>
+    <string name="message_too_long">ההודעה ארוכה מדי!</string>
+    <string name="tic_tac_toe_label">איקס עיגול</string>
+    <string name="hit_the_monkey_label">הכה את הקוף</string>
+    <string name="dice_label">קובייה</string>
+    <string name="_15_puzzle_label">חידת ה15</string>
+    <string name="search_moongames_hint">חפש בMoonGames</string>
+    <string name="email_dialog_title">אימייל</string>
+    <string name="user_id_dialog_title">מס\' זיהוי</string>
+    <string name="nickname_dialog_title">כינוי</string>
+    <string name="reset_password_confirmation">האם ברצונך לשלוח מייל איפוס סיסמה ל</string>
+    <string name="reset_password">איפוס סיסמה</string>
+    <string name="send_button">שלח</string>
+    <string name="email_sent_message">האימייל נשלח</string>
+    <string name="cancel_button">ביטול</string>
+    <string name="email_label">אימייל</string>
+    <string name="user_id_label">מס\' זיהוי</string>
+    <string name="nickname_label">כינוי</string>
+    <string name="reset_password_label">איפוס סיסמה</string>
+    <string name="sign_out_label">התנתקות</string>
+    <string name="title_hint">כותרת</string>
+    <string name="send_image_label">שלח תמונה</string>
+    <string name="shapes_label">צורות</string>
+    <string name="brush_width_label">עובי מברשת</string>
+    <string name="website_service_name_hint">אתר / שירות</string>
+    <string name="username_email_hint">שם משתמש / אימייל</string>
+    <string name="password_hint">סיסמה</string>
+    <string name="highscore_label">"שיא: "</string>
+    <string name="well_done_label">כל הכבוד!</string>
+    <string name="package_name_format_error">שם החבילה לא ערוך כנדרש!</string>
+    <string name="download_link_format_error">הקישור להורדה אינו ערוך כנדרש!</string>
+    <string name="short_description_too_short_message">התיאור הקצר קצר מדי!</string>
+    <string name="short_description_too_long_message">התיאור הקצר ארוך מדי!</string>
+    <string name="full_description_too_short_message">התיאור המלא קצר מדי!</string>
+    <string name="full_description_too_long_message">התיאור המלא ארוך מדי!</string>
+    <string name="game_icon_error">סמל המשחק לא יכול להיות ריק!</string>
+    <string name="no_screenshots_message">כלול לפחות צילום מסך אחד!</string>
+    <string name="selected_image_too_big_message">התמונה שנבחרה גדולה מדי!</string>
+    <string name="title_label">כותרת</string>
+    <string name="package_name_label">שם חבילה</string>
+    <string name="download_link_hint">קישור הורדה</string>
+    <string name="author_label">מאת:</string>
+    <string name="short_description_hint">תיאור קצר</string>
+    <string name="full_description_hint">תיאור מלא</string>
+    <string name="updated_to_label">מעודכן ל</string>
+    <string name="moonace_up_to_date_message">MoonHome מעודכן</string>
+    <string name="update_label">גרסה</string>
+    <string name="is_available_label">זמינה!</string>
+    <string name="device_model_label">סוג המכשיר</string>
+    <string name="battery_label">סוללה</string>
+    <string name="default_background">רקע ברירת מחדל</string>
+    <string name="deer_background">צבי</string>
+    <string name="eiffel_tower">מגדל אייפל</string>
+    <string name="forest_background">יער</string>
+    <string name="milky_way">שביל החלב</string>
+    <string name="new_york_background">ניו יורק</string>
+    <string name="pyramids_background">פירמידות</string>
+    <string name="sunrise_background">זריחה</string>
+    <string name="village_background">כפר</string>
+    <string name="do_not_disturb_access_message">הגדרות MoonHome דורשות גישה למצב נא לא להפריע</string>
+    <string name="access_granted_message">הגישה התקבלה</string>
+    <string name="access_denied_message">הגישה נדחתה</string>
+    <string name="language_label">שפה</string>
+    <string name="background_label">רקע</string>
+    <string name="moonface_s_version_label">גרסת MoonHome</string>
+    <string name="connecting_server">מתחבר לשרת…</string>
+    <string name="model_label">מכשיר</string>
+    <string name="device_language_label">שפת המכשיר</string>
+    <string name="android_version_label">גרסת אנדרואיד</string>
+    <string name="screen_size_label">גודל מסך</string>
+    <string name="media_volume_label">עוצמת קול של מדיה</string>
+    <string name="ring_volume_label">עוצמת צלצול</string>
+    <string name="alarm_volume_label">עוצמת התראה</string>
+    <string name="add_to_shopping_list_hint">הוסף פריט…</string>
+    <string name="enter_email_hint">הכנס את כתובת האימייל שלך</string>
+    <string name="password_recovery_label">שחזור סיסמה</string>
+    <string name="cant_find_data_message">לא ניתן לאתר נתונים!</string>
+    <string name="sign_in_label">כניסה</string>
+    <string name="remember_me_label">זכור אותי</string>
+    <string name="forgot_password_label">שכחת את הסיסמה?</string>
+    <string name="login_label">כניסה</string>
+    <string name="don_t_have_an_account_label">אין לך משתמש?</string>
+    <string name="create_account_label">צור משתמש</string>
+    <string name="creating_account">יוצר משתמש…</string>
+    <string name="nickname_in_use">הכינוי שלך בשימוש על ידי משתמש אחר</string>
+    <string name="agree_to_privacy_policy">אתה חייב להסכים למדיניות הפרטיות!</string>
+    <string name="agree_to_terms_and_conditions">אתה חייב להסכים לתנאי השימוש!</string>
+    <string name="pick_profile_pic">אנא בחר תמונת פרופיל</string>
+    <string name="blank_password">אנא קבע סיסמה</string>
+    <string name="blank_email">אנא כתוב את כתובת האימייל שלך</string>
+    <string name="blank_nickname">כתוב בבקשה כינוי</string>
+    <string name="accound_created">המשתמש נוצר בהצלחה!</string>
+    <string name="sign_up_label">הרשמה</string>
+    <string name="nickname_hint">כינוי</string>
+    <string name="email_hint">אימייל</string>
+    <string name="terms_and_conditions_label">תנאי השימוש</string>
+    <string name="privacy_policy_label">מדיניות פרטיות</string>
+    <string name="sign_up_button">הרשמה</string>
+    <string name="already_have_an_account_label">כבר יש לך משתמש?</string>
+    <string name="login_fragment_label">היכנס</string>
+    <string name="draw_label">תיקו</string>
+    <string name="game_over_label">המשחק נגמר</string>
+    <string name="won">ניצחון!</string>
+    <string name="lost">הפסד!</string>
+    <string name="ok">אישור</string>
+    <string name="vs">נגד</string>
+    <string name="choose_your_side_label">בחר צד:</string>
+    <string name="subject_label">נושא</string>
+    <string name="agree_label">אני מסכים ל</string>
+    <string name="settings_item">הגדרות</string>
+    <string name="account_item">משתמש</string>
+    <string name="privacy_policy_item">מדיניות פרטיות</string>
+    <string name="terms_and_conditions_item">תנאי השימוש</string>
+    <string name="contact_us_item">צור קשר</string>
+    <string name="share_item">שתף</string>
+    <string name="sign_out_item">התנתקות</string>
+    <string name="about_item">אודות</string>
+    <string name="search_item">חפש</string>
+    <string name="refresh_item">רענן</string>
+    <string name="back_item">אחורה</string>
+    <string name="forward_item">קדימה</string>
+    <string name="search_hint">חפש ברשת…</string>
+    <string name="moonbot">מונבוט</string>
+    <string name="settings_label">הגדרות</string>
+    <string name="my_account_label">המשתמש שלי</string>
+    <string name="search_label">חיפוש</string>
+    <string name="calendar_label">יומן</string>
+    <string name="notes_label">פתקים</string>
+    <string name="shopping_list_label">רשימת קניות</string>
+    <string name="passwords_label">סיסמאות</string>
+    <string name="paint_label">צייר</string>
+    <string name="calculator_label">מחשבון</string>
+    <string name="compose_label">אימייל חדש</string>
+    <string name="camera_label">מצלמה</string>
+    <string name="dialer_label">טלפון</string>
+    <string name="about_label">אודות</string>
+    <string name="erase_label">מחיקה</string>
+    <string name="painting_saved_successfully_message">הציור נשמר בהצלחה</string>
+    <string name="error_occurred_message">התרחשה שגיאה</string>
+    <string name="paint_save_hint">שם הציור</string>
+    <string name="paint_save_title">יצירת ציור</string>
+    <string name="paint_save_button">צור</string>
+    <string name="painting_loaded_successfully_message">הציור נטען בהצלחה</string>
+    <string name="paint_prog_title">טוען ציור...</string>
+    <string name="paint_prog_upload_title">מעלה ציור...</string>
+    <string name="create_new_painting">צור חדש</string>
+    <string name="save_before_exit_message">"האם אתה רוצה לשמור את "</string>
+    <string name="save_button">שמור</string>
+    <string name="dont_save_button">אל תשמור</string>
+    <string name="privacy_policy">צוות Moonface פיתחו את MoonHome כאפליקציה חינמית. השירות ניתן על ידי Moonface ללא מחיר ומיועד לשימוש כפי שהוא.
+\n\n
+עמוד זה מיועד ליידע משתמשים לגבי המדיניות שלנו בנושאי איסוף, שימוש והפצה של מידע אישי אם מישהו בוחר להשתמש בשירות שלנו. אם אתה בוחר להשתמש בשירות שלנו, אתה מסכים לאיסוף ושימוש של מידע בהקשר של מדיניות זו.
+\n\n
+אנחנו משתמשים במידע האישי שאנחנו אוספים כדי לספק ולשפר את השירות. לעולם לא נשתמש או נשתף את המידע שלכם עם אף אחד למעט כפי שמתואר בעמוד זה. למונחים בהם אנו משתמשים בעמוד זה אותה משמעות כמו המונחים בתנאי השימוש שלנו שנמצאים גם הם באפליקציה אלא אם נכתב אחרת בעמוד זה.
+\n\n
+בשביל חוויית שימוש טובה יותר, במהלך השימוש בשירות שלנו, ייתכן שנדרוש ממך לספק לנו מידע אישי. המידע שנבקש יישמר על ידנו ונשתמש בו כפי שמתואר בעמוד זה.  האפליקציה משתמשת בשירותים חיצוניים שייתכן שיאספו מידע שישתמשו בו על מנת לזהות אותך. אנחנו רוצים ליידע אותך שבכל פעם שאתה משתמש בשירות שלנו, במקרה של שגיאה באפליקציה אנחנו אוספים נתונים ומידע (באמצעות מוצר חיצוני) על המכשיר שלך ("נתוני יומן - Log data") נתונים אלו עשויים לכלול מידע כגון כתובת פרוטוקול האינטרנט של המכשיר שלך ("IP"), שם המכשיר, גרסת מערכת ההפעלה, תצורת היישום בעת השימוש בשירות שלנו, הזמן והתאריך של השימוש שלך בשירות, וסטטיסטיקות נוספות.
+\n\n
+עוגיות הם קבצים עם כמות קטנה של נתונים שנמצאים בשימוש נפוץ כמזהים יחודיים אנונימיים. הם נשלחים לדפדפן שלך מאתרים בהם אתה מבקר ומאוחסנים בזיכרון הפנימי של המכשיר שלך. שירות זה לא משתמש באותן "עוגיות" באופן ישיר, ולמרות זאת, האפליקציה עשויה להשתמש בקוד חיצוני וספריות חיצוניות שמשתמשים ב"עוגיות" כדי לאסוף מידע ולשפר את השירות שלהם. יש לך את האפשרות להסכים או לסרב לאותן עוגיות ולדעת מתי עוגייה נשלחת למכשירך. אם אתה בוחר לסרב לעוגיות, ייתכן שלא תוכל להשתמש בחלקים משירות זה
+\n\n
+ייתכן שנשתמש בשירותים חיצוניים בשל הסיבות הבאות: לאפשר את השירות שלנו; לספק את השירות בשמנו; או לבצע שירותים הקשורים לשירות שלנו.
+\n\n
+אנו מעוניינים ליידע משתמשים של שירות זה שלאותם שירותים חיצוניים יש גישה למידע האישי שלכם. הם מחוייבים לא להפיץ או להשתמש במידע בשביל אף מטרה אחרת.
+\n\n
+אנחנו מעריכים את האמון שלכם כשאתם מספקים לנו מידע אישי, לכן אנו שואפים להשתמש באמצעים מקובלים מבחינה מסחרית של הגנה עליו. למרות זאת, זכור שאין שיטה של העברת מידע באינטרנט או שיטה של אחסון אלקטרוני שבטוחה ואמינה ב100% ואנחנו לא יכולים להבטיח שזה בטוח לגמרי.
+\n\n
+שירות זה עשוי לכלול קישורים לאתרים אחרים. אם אתה לוחץ על קישור חיצוני, אתה תכוון לאתר זה. לידיעתך, אתרים חיצוניים אלו לא מופעלים על ידינו. לכן, אנחנו ממליצים בחום לעבור על מדיניות הפרטיות של אתרים אלו. אין לנו לשיטה ואחריות לתוכן, מדיניויות הפרטיות, או שיטות עבודה של כל אתר או שירות חיצוני
+\n\n
+ שירותים אלו לא מכוונים לאף אחד מתחת לגיל 13. איננו אוספים ביודעין מידע המאפשר זיהוי אישי של ילדים מתחת לגיל 13. במקרה שאנו מגלים שילד מתחת לגיל 13 סיפק לנו מידע אישי, אנו מיד מחקים זאת משרתינו. אם אתה הורה או אפוטרופוס ואתה מודע לכך שהילד שלך סיפק לנו מידע אישי, צור איתנו קשר כדי שנוכל לעשות את הפעולות הנחוצות.
+\n\n
+ייתכן שנעדכן את מדיניות הפרטיות שלנו מפעם לפעם. לכן, אנו ממליצים לך לבקר בעמוד זה לעיתים. אנו ניידע אותך על כל שינוי על ידי פרסום המדיניות החדשה בעמוד זה. שינויים אלו מתממשים מיד לאחר שמפורסמים בעמוד זה.
+\n\n
+אם יש לך שאלות כלשהן או הצעות לגבי מדיניות הפרטיות שלנו, אל תהסס ליצור קשר.
+\n\n
+*עמוד זה נכתב בלשון זכר מטעמי נוחות בלבד, אך מיועד לנשים וגברים כאחד.</string>
+    <string name="terms_and_conditions">בכך שאתה מוריד או משתמש באפליקציה, תנאים אלו חלים עליך באופן אוטומטי - אתה צריך לוודא שקראת אותם בקפידה לפני השימוש באפליקציה.        \n\nקוד המקור שלך האפליקציה פתוח - ויהיה זמין בקרוב בGithub לכל שימוש חוקי. האפליקציה עצמה, כל סמליה, זכויות יוצרים, זכויות מאגר המידע וכל קניין רוחני אחר הקשור לה, שייכים לMoonface.         \n\n צוות Moonface מחויב לוודא שהאפליקציה שימושית ויעילה ככל האפשר. לכן, אנו שומרים לעצמנו את הזכות לערוך שינויים, בכל זמן ומכל סיבה.        \n\nאפליקציית MoonHome מאחסנת ומעבדת מידע אישי שסיפקת לנו, כדי לספק את השירות ולשפר אותו. זו אחריות שלך לשמור על מכשירך והגישה לאפליקציה בטוחה.        \n\nאתה צריך להיות מודע לכך שישנם מספר דברים שMoonface לא תיקח אחריות עליהם. השימוש באפליקציה ידרוש חיבור פעיל לאינטרנט. החיבור יכול להיות Wi-Fi, או מסופק על ידי ספק הרשת הניידת שלך, אבל Moonface לא יכולה לקחת אחריות אם האפליקציה לא עובדת אם אין לך גישה לWi-Fi ועברת את מגבלת הנתונים שלך.\n        \nאם אתה משתמש באפליקציה מחוץ לאזור עם Wi-Fi אתה צריך לזכור שהתנאים של ההסכם שלך עם ספק הרשת הניידת שלך עדיין יחולו. כתוצאה מכך, ייתכן שתחוייב על ידי ספק הרשת הניידת שלך לתשלום על הנתונים בזמן השימוש באפליקציה, או חיובים חיצוניים אחרים. בעצם השימוש באפליקציה, אתה אחראי לכל חיוב כזהף כולל חיובים על נדידת נתונים אם אתה משתמש באפליקציה מחוץ לאזור מגוריך (מחוז או מדינה) בלי לכבות נדידת נתונים. אם אתה לא משלם החשבון של המכשיר בו אתה משתמש באפליקציה, היה מודע לכך שאנחנו מניחים שאתה קיבלת רשות ממשלם החשבון להשתמש באפליקציה.          \n\nכשאתה משתמש באפליקציה, חשוב לזכור שלמרות שאנחנו מתאמצים לוודא שהיא מעודכנת ומדויקת כל הזמן, אנחנו משתמשים בשירותים חיצוניים כדי לספק לנו מידע כך שאנחנו יכולים להפוך אותו לזמין יותר בשבילך. Moonface לא מקבלת כל אחריות לכל הפסד, ישיר או עקיף, שאתה חווה כתוצאה מהסתמכות על פונקציות של האפליקציה.\n        \nבנקודה מסויימת, אנו עשויים לרצות לעדכן את האפליקציה. האפליקציה כרגע זמינה באנדרואיד - הדרישות של המערכת עשויות להשתנות ואתה תצטרך להוריד עדכונים אם אתה רוצה להמשיך להשתמש באפליקציה. Moonface לא מבטיחה שתמיד תעדכן את האפליקציה כך שתישאר רלוונטית בשבילך ו/או עובדת עם גרסת האנדרואיד שמותקנת במכשירך. למרות זאת, אתה מחוייב תמיד להסכים לעדכונים לאפליקציה כאשר הם מוצעים לך. ייתכן שאנחנו נרצה להפסיק לספק את האפליקציה, ונפסיק שימוש שלה בכל זמן גם ללא הודעה של הפסקת השירות לך. אלא אם נאמר לך אחרת, עם כל סיום של מתן השירות, (א) הזכויות והרשיונות שניתנו לך בתנאים אלו יסתיימו; (ב) תחוייב להפסיק להשתמש באפליקציה, ובמידת הצורך להסירה ממכשירך.          \n\nייתכן שנעדכן את התנאים הללו מפעם לפעם. לכן, אנו ממליצים לך לעבור על עמוד זה לעיתים בשביל שינויים. שינויים אלו מתממשים מיד לאחר שהם מפורסמים בעמוד זה. אם יש לך שאלות כלשהן, או הצעות לגבי התנאים,  אל תהסס ליצור קשר. \n\n *עמוד זה נכתב בלשון זכר מטעמי נוחות בלבד, אך מיועד לנשים וגברים כאחד.</string>
+    <string name="language">עברית</string>
+    <string name="send_item">שלח</string>
+    <string name="add_game_item">הוסף משחק</string>
+    <string name="set_background_item">בחר רקע</string>
+    <string name="clear_item">אפס לוח</string>
+    <string name="paint_share_item">שתף</string>
+    <string name="reply_item">השב</string>
+    <string name="delete_item">מחק</string>
+    <string name="paint_name_message">שם זה כבר בשימוש</string>
+    <string name="save_item">שמור</string>
+    <string name="image_share_empty">התמונה לא יכולה להיות ריקה</string>
+    <string name="video_share_empty">הוידאו לא יכול להיות ריק</string>
+    <string name="file_deleted_success">הקובץ נמחק בהצלחה</string>
+    <string name="send_video_label">שלח וידאו</string>
+    <string name="paint_name_blank_message">בחר שם לציור</string>
+</resources>

@@ -1,0 +1,1114 @@
+-- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:32:9-40:20
+	android:grantUriPermissions
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:36:13-47
+	android:authorities
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:34:13-64
+	android:exported
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:33:13-67
+manifest
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-core-10.0.1.aar\dd0e18613cd2580b6b44e3dd9a35fe3e\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\92efac5b1303b9e3da6ef042647838d8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-10.0.1.aar\a7927790a95d8f15d580b1072501a0bd\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-auth-10.0.1.aar\21ef43eb2d184d22004d775594e985b7\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-10.0.1.aar\7eba54cd5a775252d1053a4a5ab5bb32\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-storage:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-10.0.1.aar\50c393504d8153a535b0f50198587a99\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:16:1-30:12
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-tagmanager:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-10.0.1.aar\1710deb733a30f09dce6c1148caa51be\AndroidManifest.xml:16:1-18:12
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.android.gms:play-services-ads:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.0.1.aar\34d51e3e1abd73f9f1db66b1df1c4752\AndroidManifest.xml:16:1-18:12
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-10.0.1.aar\de9cb9106f260273a0b9271490b7f054\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.android.gms:play-services-auth-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-10.0.1.aar\37e8b5d6143161ec13834e88a341d08c\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-cast:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-10.0.1.aar\e600f1d17847d586a589d57a49ea3f77\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.0.1.aar\a4045e591f5598a7021fdf9a28b0a5b5\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.firebase:firebase-config:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-config-10.0.1.aar\5c69df056607e8c6cdf5c367998ffdb8\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-awareness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-awareness-10.0.1.aar\dbc85bbb0a68d81f6e4e7ea157aca266\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-games:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-games-10.0.1.aar\16abaf4af37822f0556f5f2ed35d3e5a\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-drive:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-drive-10.0.1.aar\e75cfb607c905e23608c13d12a251550\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-fitness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-fitness-10.0.1.aar\969ed8f2b33f56c6abb6c4bccb743461\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-appindexing:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-10.0.1.aar\a5689c4778c2e682256516d60e7d54be\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-wallet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wallet-10.0.1.aar\61c05a2d17335917cc6208f43f86c322\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-identity:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-identity-10.0.1.aar\20bea3c3b59fe12027097acf9fafe77e\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-instantapps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-10.0.1.aar\c14d73746a4927b8871f154ec2ff2ea0\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-location:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-location-10.0.1.aar\3735410cc5a5b56fe421dd878952c2de\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-places:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-places-10.0.1.aar\3b6cc43787031857cf53f45ec49af38d\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-panorama:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-panorama-10.0.1.aar\cff207a4f22fd11c2ce38ce2efb71fa8\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-plus:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-plus-10.0.1.aar\7221b19e5042b5ba611ab4119cc2312f\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-safetynet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-10.0.1.aar\f4e2504bb40f3c738e3b8b441a604647\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-vision:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.0.1.aar\78245cef4e399ad361f300ef63650af4\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-wearable:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wearable-10.0.1.aar\976eec8db95356840976878fb2f0f3f6\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-10.0.1.aar\c78e56bdd7ade8cb287327d8afd56e11\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:16:1-51:12
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\e2897f896e0d30903f32119d1c80c60f\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.firebase:firebase-storage-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-10.0.1.aar\b3bdf960de3caa1c5e3b5ce10a588dfc\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.0.1.aar\14946c260c82d0632b8f9f83f993ab63\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-24.0.0.aar\395632ca9462a4de699515f3be41d52a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\palette-v7-24.0.0.aar\9e13d6bf5e5e7b09bcb4839d85bbbf7d\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e46ecb1aecc74472aeeaa366128dbc44\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\6db4b0a3c948f524aa3c999e4b758c63\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:gridlayout-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.1.1.aar\a8e2cd0d54d29b6c23d3c839e7e3f1b7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0beddadd93a7d9e17839b079362620e3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\5f0dcb210ea0a7011ec100871169c005\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\96d35a3cecb5998daa260bb87875354f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\e6425aaaa421508f615507f885c7b257\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2adea89cf85aa91e2b9ee111917b032e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\83cc3d23d08ae968d1882497ec98d749\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\b47aecfb061b043a0608e3d85b503742\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\9225e9e9acc3d1873c513ca490c0558c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\fb7ff2914c175f61a0c1c9026682d63e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bf3f7afd8999385ef6d3eec358741c42\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\6d9fb785a3f9379a97ae0504efa9cd62\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\425c2f590284b06428cc9172acb99480\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dde1aef9b51c073683442845b3ac258a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ed279b0a9842c3ff87b05054a80820db\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+	package
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:1-252:12
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CALL_PHONE
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:5:5-69
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:5:22-66
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:18:5-66
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:19:5-66
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:4:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:8:5-66
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:8:22-63
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:9:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:10:5-71
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:10:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:11:5-72
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:11:22-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:13:5-65
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:13:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:15:5-71
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:15:22-68
+uses-permission#android.permission.ACCESS_NOTIFICATION_POLICY
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:16:5-85
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:16:22-82
+uses-feature#android.hardware.location.gps
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:19:9-53
+uses-feature#android.hardware.camera2.full
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:22:9-53
+application
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:25:5-250:19
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-core-10.0.1.aar\dd0e18613cd2580b6b44e3dd9a35fe3e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-core-10.0.1.aar\dd0e18613cd2580b6b44e3dd9a35fe3e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-10.0.1.aar\a7927790a95d8f15d580b1072501a0bd\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-10.0.1.aar\a7927790a95d8f15d580b1072501a0bd\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-auth-10.0.1.aar\21ef43eb2d184d22004d775594e985b7\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-auth-10.0.1.aar\21ef43eb2d184d22004d775594e985b7\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-10.0.1.aar\de9cb9106f260273a0b9271490b7f054\AndroidManifest.xml:19:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-10.0.1.aar\de9cb9106f260273a0b9271490b7f054\AndroidManifest.xml:19:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-10.0.1.aar\e600f1d17847d586a589d57a49ea3f77\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-cast:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-10.0.1.aar\e600f1d17847d586a589d57a49ea3f77\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.0.1.aar\a4045e591f5598a7021fdf9a28b0a5b5\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.0.1.aar\a4045e591f5598a7021fdf9a28b0a5b5\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-config-10.0.1.aar\5c69df056607e8c6cdf5c367998ffdb8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-config-10.0.1.aar\5c69df056607e8c6cdf5c367998ffdb8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-awareness-10.0.1.aar\dbc85bbb0a68d81f6e4e7ea157aca266\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-awareness-10.0.1.aar\dbc85bbb0a68d81f6e4e7ea157aca266\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-games-10.0.1.aar\16abaf4af37822f0556f5f2ed35d3e5a\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-games-10.0.1.aar\16abaf4af37822f0556f5f2ed35d3e5a\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-drive-10.0.1.aar\e75cfb607c905e23608c13d12a251550\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-drive-10.0.1.aar\e75cfb607c905e23608c13d12a251550\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-fitness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-fitness-10.0.1.aar\969ed8f2b33f56c6abb6c4bccb743461\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-fitness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-fitness-10.0.1.aar\969ed8f2b33f56c6abb6c4bccb743461\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:23:5-19
+MERGED from [com.google.firebase:firebase-appindexing:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-10.0.1.aar\a5689c4778c2e682256516d60e7d54be\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-appindexing:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-10.0.1.aar\a5689c4778c2e682256516d60e7d54be\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-identity:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-identity-10.0.1.aar\20bea3c3b59fe12027097acf9fafe77e\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-identity:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-identity-10.0.1.aar\20bea3c3b59fe12027097acf9fafe77e\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-location:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-location-10.0.1.aar\3735410cc5a5b56fe421dd878952c2de\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-location:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-location-10.0.1.aar\3735410cc5a5b56fe421dd878952c2de\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-places:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-places-10.0.1.aar\3b6cc43787031857cf53f45ec49af38d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-places-10.0.1.aar\3b6cc43787031857cf53f45ec49af38d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-panorama:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-panorama-10.0.1.aar\cff207a4f22fd11c2ce38ce2efb71fa8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-panorama:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-panorama-10.0.1.aar\cff207a4f22fd11c2ce38ce2efb71fa8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-plus-10.0.1.aar\7221b19e5042b5ba611ab4119cc2312f\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-plus-10.0.1.aar\7221b19e5042b5ba611ab4119cc2312f\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-10.0.1.aar\f4e2504bb40f3c738e3b8b441a604647\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-10.0.1.aar\f4e2504bb40f3c738e3b8b441a604647\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-vision:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.0.1.aar\78245cef4e399ad361f300ef63650af4\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.0.1.aar\78245cef4e399ad361f300ef63650af4\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-wearable:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wearable-10.0.1.aar\976eec8db95356840976878fb2f0f3f6\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-wearable:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wearable-10.0.1.aar\976eec8db95356840976878fb2f0f3f6\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\e2897f896e0d30903f32119d1c80c60f\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\e2897f896e0d30903f32119d1c80c60f\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.0.1.aar\14946c260c82d0632b8f9f83f993ab63\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.0.1.aar\14946c260c82d0632b8f9f83f993ab63\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-24.0.0.aar\395632ca9462a4de699515f3be41d52a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-24.0.0.aar\395632ca9462a4de699515f3be41d52a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\palette-v7-24.0.0.aar\9e13d6bf5e5e7b09bcb4839d85bbbf7d\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\palette-v7-24.0.0.aar\9e13d6bf5e5e7b09bcb4839d85bbbf7d\AndroidManifest.xml:22:5-23:19
+	android:supportsRtl
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:30:9-35
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:29:9-33
+	android:fullBackupContent
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:27:9-41
+	android:icon
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:28:9-42
+	android:allowBackup
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:26:9-35
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:31:9-40
+activity#com.moonface.home.MainActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:42:9-54:20
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:46:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:45:13-45
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:48:13-54
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:44:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:47:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:43:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:49:13-53:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:50:17-69
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:50:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:52:17-77
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:52:27-74
+activity#com.moonface.home.HomeActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:55:9-60:67
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:58:13-45
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:60:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:57:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:59:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:56:13-41
+activity#com.moonface.home.SettingsActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:61:9-66:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:65:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:64:13-51
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:63:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:66:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:62:13-45
+activity#com.moonface.home.MyAccountActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:67:9-72:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:71:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:70:13-53
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:69:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:72:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:68:13-46
+activity#com.moonface.home.TermsAndConditionsActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:73:9-78:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:77:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:76:13-63
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:75:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:78:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:74:13-55
+activity#com.moonface.home.SearchActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:79:9-84:67
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:82:13-49
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:84:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:81:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:83:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:80:13-43
+activity#com.moonface.home.BootAnimationActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:85:9-89:58
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:88:13-49
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:87:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:89:13-55
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:86:13-50
+activity#com.moonface.home.CalendarActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:90:9-95:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:94:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:93:13-51
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:92:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:95:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:91:13-45
+activity#com.moonface.home.NotesActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:96:9-102:67
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:100:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:99:13-48
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:102:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:98:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:101:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:97:13-42
+activity#com.moonface.home.ShoppingListActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:103:9-109:67
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:107:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:106:13-56
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:109:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:105:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:108:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:104:13-49
+activity#com.moonface.home.PasswordsActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:110:9-116:67
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:114:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:113:13-52
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:116:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:112:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:115:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:111:13-46
+activity#com.moonface.home.MoonchatActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:117:9-123:70
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:121:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:120:13-51
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:123:13-67
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:119:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:122:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:118:13-45
+activity#com.moonface.home.PaintActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:124:9-129:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:128:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:127:13-48
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:126:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:129:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:125:13-42
+activity#com.moonface.home.CalculatorActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:130:9-135:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:134:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:133:13-53
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:132:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:135:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:131:13-47
+activity#com.moonface.home.InboxActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:136:9-141:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:140:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:139:13-51
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:138:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:141:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:137:13-42
+activity#com.moonface.home.ComposeActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:142:9-148:71
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:146:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:145:13-50
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:148:13-68
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:144:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:147:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:143:13-44
+activity#com.moonface.home.CameraActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:149:9-153:59
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:152:13-49
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:151:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:153:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:150:13-43
+activity#com.moonface.home.DialerActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:154:9-159:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:158:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:157:13-49
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:156:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:159:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:155:13-43
+activity#com.moonface.home.MoongamesActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:160:9-166:67
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:164:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:163:13-52
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:166:13-64
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:162:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:165:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:161:13-46
+activity#com.moonface.home.TicTacToeActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:167:9-172:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:171:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:170:13-52
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:169:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:172:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:168:13-46
+activity#com.moonface.home.HitTheMonkeyActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:173:9-178:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:177:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:176:13-52
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:175:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:178:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:174:13-49
+activity#com.moonface.home.DiceActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:179:9-184:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:183:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:182:13-52
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:181:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:184:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:180:13-41
+activity#com.moonface.home.Puzzle15Activity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:185:9-190:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:189:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:188:13-52
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:187:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:190:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:186:13-45
+activity#com.moonface.home.AboutActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:191:9-196:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:195:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:194:13-48
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:193:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:196:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:192:13-42
+activity#com.moonface.home.RecommendGameActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:197:9-203:57
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:201:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:200:13-52
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:203:13-54
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:199:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:202:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:198:13-50
+activity#com.moonface.home.GameDescriptionActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:204:9-210:57
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:208:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:207:13-52
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:210:13-54
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:206:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:209:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:205:13-52
+activity#com.moonface.home.AddEventActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:211:9-217:62
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:215:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:214:13-51
+	android:windowSoftInputMode
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:217:13-59
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:213:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:216:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:212:13-45
+activity#com.moonface.home.ViewEmailActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:218:9-223:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:222:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:221:13-51
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:220:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:223:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:219:13-46
+activity#com.moonface.home.PrivacyPolicyActivity
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:224:9-229:59
+	android:screenOrientation
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:228:13-49
+	android:label
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:227:13-57
+	android:configChanges
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:226:13-66
+	android:theme
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:229:13-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:225:13-50
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:231:9-235:39
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:6:9-194
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:233:13-73
+	android:exported
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:234:13-37
+	android:initOrder
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:235:13-36
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:232:13-77
+service#com.moonface.home.MyFirebaseMessagingService
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:236:9-241:19
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:237:13-55
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:238:13-240:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:239:17-77
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:239:25-75
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:242:9-244:69
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:20:9-121
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:244:13-66
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:243:13-58
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:245:9-247:56
+	android:value
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:247:13-53
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:246:13-58
+activity#com.moonface.home.MoonStore
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:249:9-56
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:249:19-44
+uses-sdk
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-core-10.0.1.aar\dd0e18613cd2580b6b44e3dd9a35fe3e\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-core:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-core-10.0.1.aar\dd0e18613cd2580b6b44e3dd9a35fe3e\AndroidManifest.xml:4:5-42
+MERGED from [com.android.support:design:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\92efac5b1303b9e3da6ef042647838d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\92efac5b1303b9e3da6ef042647838d8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-10.0.1.aar\a7927790a95d8f15d580b1072501a0bd\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-10.0.1.aar\a7927790a95d8f15d580b1072501a0bd\AndroidManifest.xml:4:5-42
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-auth-10.0.1.aar\21ef43eb2d184d22004d775594e985b7\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-auth-10.0.1.aar\21ef43eb2d184d22004d775594e985b7\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-10.0.1.aar\7eba54cd5a775252d1053a4a5ab5bb32\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-10.0.1.aar\7eba54cd5a775252d1053a4a5ab5bb32\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-10.0.1.aar\50c393504d8153a535b0f50198587a99\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-10.0.1.aar\50c393504d8153a535b0f50198587a99\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:20:5-42
+MERGED from [com.google.firebase:firebase-crash:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-crash-10.0.1.aar\13dacf4e57cd83a1b735bb933814384e\AndroidManifest.xml:20:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-10.0.1.aar\1710deb733a30f09dce6c1148caa51be\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-10.0.1.aar\1710deb733a30f09dce6c1148caa51be\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-ads:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.0.1.aar\34d51e3e1abd73f9f1db66b1df1c4752\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-ads:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.0.1.aar\34d51e3e1abd73f9f1db66b1df1c4752\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-10.0.1.aar\de9cb9106f260273a0b9271490b7f054\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-10.0.1.aar\de9cb9106f260273a0b9271490b7f054\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-10.0.1.aar\37e8b5d6143161ec13834e88a341d08c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-auth-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-10.0.1.aar\37e8b5d6143161ec13834e88a341d08c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-cast:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-10.0.1.aar\e600f1d17847d586a589d57a49ea3f77\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-cast:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-10.0.1.aar\e600f1d17847d586a589d57a49ea3f77\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.0.1.aar\a4045e591f5598a7021fdf9a28b0a5b5\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-clearcut:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.0.1.aar\a4045e591f5598a7021fdf9a28b0a5b5\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-config:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-config-10.0.1.aar\5c69df056607e8c6cdf5c367998ffdb8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-config:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-config-10.0.1.aar\5c69df056607e8c6cdf5c367998ffdb8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-awareness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-awareness-10.0.1.aar\dbc85bbb0a68d81f6e4e7ea157aca266\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-awareness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-awareness-10.0.1.aar\dbc85bbb0a68d81f6e4e7ea157aca266\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-games:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-games-10.0.1.aar\16abaf4af37822f0556f5f2ed35d3e5a\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-games:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-games-10.0.1.aar\16abaf4af37822f0556f5f2ed35d3e5a\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-drive:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-drive-10.0.1.aar\e75cfb607c905e23608c13d12a251550\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-drive:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-drive-10.0.1.aar\e75cfb607c905e23608c13d12a251550\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-fitness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-fitness-10.0.1.aar\969ed8f2b33f56c6abb6c4bccb743461\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-fitness:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-fitness-10.0.1.aar\969ed8f2b33f56c6abb6c4bccb743461\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-appindexing:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-10.0.1.aar\a5689c4778c2e682256516d60e7d54be\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-appindexing:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-10.0.1.aar\a5689c4778c2e682256516d60e7d54be\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-wallet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wallet-10.0.1.aar\61c05a2d17335917cc6208f43f86c322\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wallet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wallet-10.0.1.aar\61c05a2d17335917cc6208f43f86c322\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-identity-10.0.1.aar\20bea3c3b59fe12027097acf9fafe77e\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-identity:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-identity-10.0.1.aar\20bea3c3b59fe12027097acf9fafe77e\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-instantapps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-10.0.1.aar\c14d73746a4927b8871f154ec2ff2ea0\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-instantapps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-10.0.1.aar\c14d73746a4927b8871f154ec2ff2ea0\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-location:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-location-10.0.1.aar\3735410cc5a5b56fe421dd878952c2de\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-location:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-location-10.0.1.aar\3735410cc5a5b56fe421dd878952c2de\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-places:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-places-10.0.1.aar\3b6cc43787031857cf53f45ec49af38d\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-places:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-places-10.0.1.aar\3b6cc43787031857cf53f45ec49af38d\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-nearby:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-nearby-10.0.1.aar\f8b71c4365149861e3f88c9e00588a31\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-panorama:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-panorama-10.0.1.aar\cff207a4f22fd11c2ce38ce2efb71fa8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-panorama:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-panorama-10.0.1.aar\cff207a4f22fd11c2ce38ce2efb71fa8\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-plus:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-plus-10.0.1.aar\7221b19e5042b5ba611ab4119cc2312f\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-plus:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-plus-10.0.1.aar\7221b19e5042b5ba611ab4119cc2312f\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-10.0.1.aar\f4e2504bb40f3c738e3b8b441a604647\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-10.0.1.aar\f4e2504bb40f3c738e3b8b441a604647\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-vision:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.0.1.aar\78245cef4e399ad361f300ef63650af4\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-vision:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.0.1.aar\78245cef4e399ad361f300ef63650af4\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-wearable:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wearable-10.0.1.aar\976eec8db95356840976878fb2f0f3f6\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-wearable:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-wearable-10.0.1.aar\976eec8db95356840976878fb2f0f3f6\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-10.0.1.aar\c78e56bdd7ade8cb287327d8afd56e11\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-database-connection:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-10.0.1.aar\c78e56bdd7ade8cb287327d8afd56e11\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:17:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-common-10.0.1.aar\dc70406982417ed62c150ed9b33d195e\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\e2897f896e0d30903f32119d1c80c60f\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.0.1.aar\e2897f896e0d30903f32119d1c80c60f\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:22:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:22:5-42
+MERGED from [com.google.firebase:firebase-storage-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-10.0.1.aar\b3bdf960de3caa1c5e3b5ce10a588dfc\AndroidManifest.xml:3:5-42
+MERGED from [com.google.firebase:firebase-storage-common:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-10.0.1.aar\b3bdf960de3caa1c5e3b5ce10a588dfc\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.0.1.aar\14946c260c82d0632b8f9f83f993ab63\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-gass:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.0.1.aar\14946c260c82d0632b8f9f83f993ab63\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.0.1.aar\b9341a351de8ca5dcc70ba39e7119ea3\AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-24.0.0.aar\395632ca9462a4de699515f3be41d52a\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:mediarouter-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-24.0.0.aar\395632ca9462a4de699515f3be41d52a\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\palette-v7-24.0.0.aar\9e13d6bf5e5e7b09bcb4839d85bbbf7d\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:24.0.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\palette-v7-24.0.0.aar\9e13d6bf5e5e7b09bcb4839d85bbbf7d\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e46ecb1aecc74472aeeaa366128dbc44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\e46ecb1aecc74472aeeaa366128dbc44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\6db4b0a3c948f524aa3c999e4b758c63\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\6db4b0a3c948f524aa3c999e4b758c63\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.1.1.aar\a8e2cd0d54d29b6c23d3c839e7e3f1b7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-27.1.1.aar\a8e2cd0d54d29b6c23d3c839e7e3f1b7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0beddadd93a7d9e17839b079362620e3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\0beddadd93a7d9e17839b079362620e3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\5f0dcb210ea0a7011ec100871169c005\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\5f0dcb210ea0a7011ec100871169c005\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\96d35a3cecb5998daa260bb87875354f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\96d35a3cecb5998daa260bb87875354f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\e6425aaaa421508f615507f885c7b257\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\e6425aaaa421508f615507f885c7b257\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2adea89cf85aa91e2b9ee111917b032e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2adea89cf85aa91e2b9ee111917b032e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\83cc3d23d08ae968d1882497ec98d749\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\83cc3d23d08ae968d1882497ec98d749\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\b47aecfb061b043a0608e3d85b503742\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\b47aecfb061b043a0608e3d85b503742\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\9225e9e9acc3d1873c513ca490c0558c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\9225e9e9acc3d1873c513ca490c0558c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\fb7ff2914c175f61a0c1c9026682d63e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\fb7ff2914c175f61a0c1c9026682d63e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bf3f7afd8999385ef6d3eec358741c42\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\bf3f7afd8999385ef6d3eec358741c42\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\6d9fb785a3f9379a97ae0504efa9cd62\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\6d9fb785a3f9379a97ae0504efa9cd62\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\425c2f590284b06428cc9172acb99480\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\425c2f590284b06428cc9172acb99480\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dde1aef9b51c073683442845b3ac258a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\dde1aef9b51c073683442845b3ac258a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ed279b0a9842c3ff87b05054a80820db\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ed279b0a9842c3ff87b05054a80820db\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:37:13-39:54
+	android:resource
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:39:17-51
+	android:name
+		ADDED from C:\Users\elaic\Desktop\MoonHome\app\src\main\AndroidManifest.xml:38:17-67
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:23:9-27:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:23:88-111
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-messaging-10.0.1.aar\43238461b6fb48de511ade2ac7fec20e\AndroidManifest.xml:23:18-87
+service#com.google.android.gms.tagmanager.TagManagerService
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:24:9-134
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:24:110-132
+	android:exported
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:24:85-109
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:24:18-84
+activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:25:9-32:20
+	android:noHistory
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:25:94-118
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:25:19-93
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.${applicationId}
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:26:13-31:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.com.moonface.home
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:26:13-31:29
+data
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:27:17-71
+	android:scheme
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:27:23-69
+action#android.intent.action.VIEW
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:28:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:29:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:29:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-10.0.1.aar\70f807451af8ea47f57b610bd9fd033a\AndroidManifest.xml:30:27-75
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-10.0.1.aar\c4093cb523295b28ed2e41867db1e194\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-10.0.1.aar\bb275ed84dee34b416fdba76a7fbbcc4\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:27:17-104
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.0.1.aar\161d8f054688ed7c2bbd6dbb32528400\AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.0.1.aar\4ef03343eefecf76b69267ba2b8e46e2\AndroidManifest.xml:32:16-87
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:20:9-25:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:20:51-74
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:20:75-121
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:20:19-50
+intent-filter#action:name:com.google.android.gms.appinvite.ACTION_PREVIEW+category:name:android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:21:13-24:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:22:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-10.0.1.aar\236bc40cf52a35f791c3155a3b885020\AndroidManifest.xml:22:25-87
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-auth-10.0.1.aar\57a8b1d8d086de260d4cb4407c025d60\AndroidManifest.xml:24:18-63
+receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
+ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:5:9-99
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:5:19-97
+service#com.google.android.gms.cast.framework.media.MediaNotificationService
+ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:6:9-103
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:6:18-101
+service#com.google.android.gms.cast.framework.ReconnectionService
+ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:7:9-92
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-10.0.1.aar\ef63073981208953a1822768c8ed94b1\AndroidManifest.xml:7:18-90
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-iid-10.0.1.aar\32ec7e4d8abeafd0631f9ae5b506c8fa\AndroidManifest.xml:20:5-81
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:22:5-81
+MERGED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.android.gms:play-services-gcm:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-gcm-10.0.1.aar\9b27ec3f568df012857859c7b3f74190\AndroidManifest.xml:20:22-79
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-maps-10.0.1.aar\48ffa4f7f48316ab6b1f223fa6886574\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-base-10.0.1.aar\8fa0b467ebfbc801b361c4f434643202\AndroidManifest.xml:19:19-85
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:17-71
+permission#com.moonface.home.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:26:22-76
+uses-permission#com.moonface.home.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:30:9-36:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:30:19-84
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:31:13-35:29
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:com.moonface.home
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:31:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:32:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:33:17-85
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:33:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:34:27-58
+category#com.moonface.home
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:34:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:34:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:40:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:40:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:40:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:44:9-48:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:44:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:44:18-82
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:45:13-47:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:45:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:46:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.0.1.aar\257185c1f18f855bda47ad686ccc90b5\AndroidManifest.xml:46:25-77
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:25:9-232
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:25:72-181
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:25:182-230
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:25:19-71
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:26:9-131
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:26:92-129
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.0.1] C:\Users\elaic\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.0.1.aar\697962ec7ea73b549d62fdc81b77cbdd\AndroidManifest.xml:26:19-91

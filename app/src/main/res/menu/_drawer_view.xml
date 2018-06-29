@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/settings_grey_192x192"
+            android:title="@string/settings_item" />
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_account_box_grey"
+            android:title="@string/account_item" />
+        <item
+            android:id="@+id/pp"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/privacy_policy_item"/>
+        <item
+            android:id="@+id/tac"
+            android:icon="@drawable/ic_subject_grey"
+            android:title="@string/terms_and_conditions_item" />
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/ic_email_grey"
+            android:title="@string/contact_us_item" />
+    </group>
+    <group android:id="@+id/group2" android:checkableBehavior="none">
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_share_grey"
+            android:title="@string/share_item" />
+        <item
+            android:id="@+id/signout"
+            android:icon="@drawable/ic_exit_to_app_grey"
+            android:title="@string/sign_out_item" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/info_outline_grey_192x192"
+            android:title="@string/about_item" />
+    </group>
+</menu>

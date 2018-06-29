@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linear_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/sign_up_label"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:transitionName="title" />
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/nickname_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:hint="@string/nickname_hint"
+            android:textColor="#F5F5F5"
+            android:textColorHint="#F5F5F5">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:textColor="#F5F5F5" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/email_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:hint="@string/email_hint"
+            android:textColor="#F5F5F5"
+            android:textColorHint="#F5F5F5"
+            android:transitionName="email_input_layout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/email_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textColor="#F5F5F5"
+                android:transitionName="email" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:hint="@string/password_hint"
+            android:textColor="#F5F5F5"
+            android:textColorHint="#F5F5F5"
+            android:transitionName="password_input_layout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/password_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:inputType="textVisiblePassword"
+                android:singleLine="true"
+                android:textColor="#F5F5F5"
+                android:transitionName="password" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccent"
+                android:gravity="center_vertical"
+                android:padding="4dp"
+                android:text="@string/agree_label"
+                android:textColor="#F5F5F5"
+                android:textSize="14sp"
+                android:transitionName="checkbox" />
+
+            <TextView
+                android:id="@+id/tac_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:padding="4dp"
+                android:text="@string/terms_and_conditions_label"
+                android:textColor="#FFC107"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:transitionName="button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorAccent"
+                android:gravity="center_vertical"
+                android:padding="4dp"
+                android:text="@string/agree_label"
+                android:textColor="#F5F5F5"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/pp_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:padding="4dp"
+                android:text="@string/privacy_policy_label"
+                android:textColor="#FFC107"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_button"
+            android:padding="4dp"
+            android:text="@string/sign_up_button"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:transitionName="sign_button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp">
+
+            <TextView
+                android:id="@+id/login_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/already_have_an_account_label"
+                android:textColor="#F5F5F5"
+                android:textSize="16sp"
+                android:transitionName="sign_label" />
+
+            <TextView
+                android:id="@+id/openlogin_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="?selectableItemBackground"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:text="@string/login_fragment_label"
+                android:textColor="#FFC107"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:transitionName="tab_button" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

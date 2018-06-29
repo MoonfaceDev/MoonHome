@@ -1,0 +1,81 @@
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/_toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?android:actionBarSize"
+			android:background="#01579B"
+			app:popupTheme="@style/AppTheme.PopupOverlay" />
+	</android.support.design.widget.AppBarLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+		<LinearLayout
+			android:id="@+id/linear6"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#EEEEEE"
+			android:gravity="center_horizontal"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/linear8"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="#FFFFFF"
+				android:gravity="center_horizontal|top"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/linear_event"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_margin="8dp"
+					android:gravity="center_horizontal"
+					android:orientation="vertical">
+					<LinearLayout
+						android:id="@+id/linear13"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_margin="4dp"
+						android:background="#E0E0E0"
+						android:gravity="center_horizontal|center_vertical"
+						android:orientation="vertical">
+
+						<DatePicker
+							android:id="@+id/dp"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content" />
+					</LinearLayout>
+
+					<ListView
+						android:id="@+id/listview1"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:choiceMode="none"
+						android:divider="@null"
+						android:dividerHeight="0dp"
+						android:paddingBottom="4dp"
+						android:paddingTop="4dp" />
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/_fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:layout_gravity="end|bottom"
+		app:srcCompat="@drawable/ic_add_white"/>
+</android.support.design.widget.CoordinatorLayout>

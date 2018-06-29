@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "683195199547",
+    "firebase_url": "https://moonface-home.firebaseio.com",
+    "project_id": "moonface-home",
+    "storage_bucket": "moonface-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683195199547:android:0e9da00ec8f929c7",
+        "android_client_info": {
+          "package_name": "com.moonface.home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683195199547-8u17ve5oc3g5uv3jp07fjnib3pmoo9br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moonface.home",
+            "certificate_hash": "3217a88807d32cf1edbffea47bafa12ee29bec42"
+          }
+        },
+        {
+          "client_id": "683195199547-c3l1e1gm6krurb4q8ace5bc7jtgs3c42.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "683195199547-c3l1e1gm6krurb4q8ace5bc7jtgs3c42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeI_VlBp0--xOgXhBC1v2PWotp-x4y3JY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683195199547-c3l1e1gm6krurb4q8ace5bc7jtgs3c42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
