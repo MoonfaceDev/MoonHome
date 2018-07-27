@@ -101,8 +101,7 @@
 					android:textSize="16sp" />
 			</LinearLayout>
 			<ScrollView
-				android:id="@+id/vscroll2"
-				android:layout_width="match_parent"
+                android:layout_width="match_parent"
 				android:layout_height="0dp"
 				android:layout_weight="1">
 
@@ -201,8 +200,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview19"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons Attribution 4.0 International"
 						android:textColor="#000000"
@@ -217,8 +215,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview21"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Fxemoji u1F31C (Mozilla)"
@@ -226,8 +223,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview22"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons Attribution 4.0 International"
 						android:textColor="#000000"
@@ -242,8 +238,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview30"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Crown free icon (Roundicons)"
@@ -251,8 +246,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview31"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons BY 3.0"
 						android:textColor="#000000"
@@ -267,8 +261,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview33"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Emojione 1F64A (EmojiOne)"
@@ -276,8 +269,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview34"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons Attribution-Share Alike 4.0 International"
 						android:textColor="#000000"
@@ -292,8 +284,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview36"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Twemoji 1f34c (Twitter)"
@@ -301,8 +292,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview37"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons Attribution 4.0 International"
 						android:textColor="#000000"
@@ -317,8 +307,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview39"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • icons8"
@@ -326,8 +315,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview40"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Creative Commons Attribution-NoDerivs 3.0 Unported"
 						android:textColor="#000000"
@@ -342,8 +330,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview44"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Android Support V4 Library (Google)"
@@ -351,16 +338,14 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview45"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Apache 2.0"
 						android:textColor="#000000"
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview42"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Android Support V7 Appcompat Library (Google)"
@@ -368,8 +353,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview43"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Apache 2.0"
 						android:textColor="#000000"
@@ -391,8 +375,7 @@
                         android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview46"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
 						android:text=" • Firebase Database, Auth, Storage, Crashlytics (Google)"
@@ -400,8 +383,7 @@
 						android:textSize="12sp" />
 
 					<TextView
-						android:id="@+id/textview47"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="Apache 2.0"
 						android:textColor="#000000"

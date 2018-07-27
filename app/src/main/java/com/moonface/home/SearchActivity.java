@@ -44,7 +44,7 @@ public class SearchActivity extends AppCompatActivity {
 	
 	private void initialize() {
 		
-		_toolbar = (Toolbar) findViewById(R.id._toolbar);
+		_toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
@@ -54,7 +54,7 @@ public class SearchActivity extends AppCompatActivity {
 				finish();
 			}
 		});
-		webview1 = (WebView) findViewById(R.id.webview1);
+		webview1 = findViewById(R.id.webview1);
 		webview1.getSettings().setJavaScriptEnabled(true);
 		webview1.getSettings().setSupportZoom(true);
 		webview1.getSettings().setLoadsImagesAutomatically(true);

@@ -31,16 +31,14 @@ import android.view.View;
 import android.widget.AdapterView;
 
 public class InboxActivity extends AppCompatActivity {
-	
+
 	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
-	
+
 	private Toolbar _toolbar;
 	private FloatingActionButton _fab;
-	private double position = 0;
-	
+
 	private ArrayList<HashMap<String, Object>> title_list = new ArrayList<>();
-	private ArrayList<String> str = new ArrayList<>();
 
 	private ListView listview1;
 	
@@ -61,7 +59,6 @@ public class InboxActivity extends AppCompatActivity {
 	}
 	
 	private void initialize() {
-		
 		_toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -77,13 +74,12 @@ public class InboxActivity extends AppCompatActivity {
 		listview1 = findViewById(R.id.listview1);
 		data = getSharedPreferences("data", Activity.MODE_PRIVATE);
 		inbox = _firebase.getReference("users").child(data.getString("id","")).child("inbox");
-		mailData = getSharedPreferences("mailData", Activity.MODE_PRIVATE);
-		
+
 		listview1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
-				_openEmail(_position, title_list.get(_position).get("subject").toString(), title_list.get(_position).get("from").toString(), title_list.get(_position).get("date").toString(), title_list.get(_position).get("email").toString());
+				_openEmail(title_list.get(_position).get("key").toString(), title_list.get(_position).get("subject").toString(), title_list.get(_position).get("from").toString(), title_list.get(_position).get("date").toString(), title_list.get(_position).get("email").toString());
 			}
 		});
 		
@@ -103,9 +99,9 @@ public class InboxActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
-				str.add(_childKey);
 				if (_childValue.get("to").toString().equals(data.getString("email", ""))) {
-					title_list.add(_childValue);
+					_childValue.put("key", _childKey);
+				    title_list.add(_childValue);
 				}
 				listview1.setAdapter(new Listview1Adapter(title_list));
 				((BaseAdapter)listview1.getAdapter()).notifyDataSetChanged();
@@ -129,6 +125,8 @@ public class InboxActivity extends AppCompatActivity {
 				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
 				final String _childKey = _param1.getKey();
 				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
+                _childValue.put("key", _childKey);
+				title_list.remove(_childValue);
 				listview1.setAdapter(new Listview1Adapter(title_list));
 				((BaseAdapter)listview1.getAdapter()).notifyDataSetChanged();
 			}
@@ -143,32 +141,24 @@ public class InboxActivity extends AppCompatActivity {
 		inbox.addChildEventListener(_inbox_child_listener);
 	}
 	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#c79100"));
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			w.setStatusBarColor(Color.parseColor("#c79100"));
+		}
 	}
 	
 	@Override
 	public void onBackPressed() {
 		finish();
 	}
-	
-	@Override
-	public void onPause() {
-		super.onPause();
-		if (!mailData.getString("position", "").equals("")) {
-			position = Double.parseDouble(mailData.getString("position", ""));
-			inbox.child(str.get((int)(position))).removeValue();
-			title_list.remove((int)(position));
-			str.remove((int)(position));
-			listview1.setAdapter(new Listview1Adapter(title_list));
-			mailData.edit().putString("position", "").commit();
-		}
-	}
-	private void _openEmail (final double _position, final String _subject, final String _from, final String _date, final String _email) {
-		openEmail_intent.putExtra("position", String.valueOf((long)(_position)));
+
+	private void _openEmail (final String key, final String _subject, final String _from, final String _date, final String _email) {
+		openEmail_intent.putExtra("key", key);
 		openEmail_intent.putExtra("subject", _subject);
-		openEmail_intent.putExtra("from", _from);
+		openEmail_intent.putExtra("from_email", _from);
 		openEmail_intent.putExtra("date", _date);
 		openEmail_intent.putExtra("email", _email);
+		openEmail_intent.putExtra("running", true);
 		openEmail_intent.setClass(getApplicationContext(), ViewEmailActivity.class);
 		startActivity(openEmail_intent);
 	}
@@ -271,9 +261,7 @@ public class InboxActivity extends AppCompatActivity {
 			delete.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View _view) {
-					inbox.child(str.get(_position)).removeValue();
-					title_list.remove(_position);
-					str.remove(_position);
+					inbox.child(title_list.get(_position).get("key").toString()).removeValue();
 				}
 			});
 			reply.setOnClickListener(new View.OnClickListener() {

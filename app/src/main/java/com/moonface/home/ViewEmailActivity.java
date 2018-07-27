@@ -1,36 +1,42 @@
 package com.moonface.home;
 
-import android.os.*;
-import android.view.*;
-import android.widget.*;
-import android.graphics.*;
-import android.util.*;
-
-import java.util.*;
-
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.LinearLayout;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.content.Intent;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ViewEmailActivity extends AppCompatActivity {
-	
-	
-	private Toolbar _toolbar;
-	
-	private TextView subject;
+
+    private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
+
+    private TextView subject;
 	private TextView content;
 	private TextView from;
 	private TextView time;
-	
-	private SharedPreferences mailData;
-	private Intent reply_intent = new Intent();
+
+    private DatabaseReference inbox;
+    private Intent reply_intent = new Intent();
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
@@ -40,8 +46,8 @@ public class ViewEmailActivity extends AppCompatActivity {
 	}
 	
 	private void initialize() {
-		
-		_toolbar = findViewById(R.id._toolbar);
+
+        Toolbar _toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
@@ -55,19 +61,33 @@ public class ViewEmailActivity extends AppCompatActivity {
 		content = findViewById(R.id.content);
 		from = findViewById(R.id.from);
 		time = findViewById(R.id.time);
-		mailData = getSharedPreferences("mailData", Activity.MODE_PRIVATE);
+        SharedPreferences data = getSharedPreferences("data", Activity.MODE_PRIVATE);
+        inbox = _firebase.getReference("users").child(data.getString("id","")).child("inbox");
 	}
 	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#c79100"));
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			w.setStatusBarColor(Color.parseColor("#c79100"));
+		}
 		subject.setText(getIntent().getStringExtra("subject"));
-		from.setText(getIntent().getStringExtra("from"));
+		from.setText(getIntent().getStringExtra("from_email"));
 		time.setText(getIntent().getStringExtra("date"));
 		content.setText(getIntent().getStringExtra("email"));
 	}
 	
 	@Override
 	public void onBackPressed() {
-		finish();
+		if(getIntent().getBooleanExtra("running", false)) {
+            finish();
+        } else {
+		    Intent intent = new Intent();
+		    intent.setClass(this, InboxActivity.class);
+		    startActivity(intent);
+		    finish();
+        }
 	}
 
 	@Override
@@ -82,13 +102,13 @@ public class ViewEmailActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_reply:
                 reply_intent.setClass(getApplicationContext(), ComposeActivity.class);
-                reply_intent.putExtra("reply", getIntent().getStringExtra("from"));
+                reply_intent.putExtra("reply", getIntent().getStringExtra("from_email"));
                 reply_intent.putExtra("replySubject", getIntent().getStringExtra("subject"));
                 startActivity(reply_intent);
                 return true;
 
             case R.id.action_delete:
-                mailData.edit().putString("position", getIntent().getStringExtra("position")).apply();
+                inbox.child(getIntent().getStringExtra("key")).removeValue();
                 finish();
                 return true;
 

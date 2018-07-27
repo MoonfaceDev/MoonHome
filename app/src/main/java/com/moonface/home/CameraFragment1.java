@@ -91,10 +91,9 @@ public class CameraFragment1 extends Fragment {
 
     }
     private static final int CAMERA_REQUEST =1;
-    public static void photoPreview(int requestCode, int resultCode, Intent data, Context context) throws IOException {
+    public static void photoPreview(int requestCode, int resultCode, Context context) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap output = FileUtil.getBitmap(staticImageUri, context);
-            output = DrawableUtil.getRotatedBitmap(output, DrawableUtil.getRotation(mImageFileLocation));
             photo_preview.setImageBitmap(output);
             isEmpty = false;
         }

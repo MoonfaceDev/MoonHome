@@ -2,8 +2,10 @@ package com.moonface.home;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.*;
+import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.support.v7.view.menu.ListMenuItemView;
 import android.text.SpannableString;
@@ -37,8 +39,10 @@ import android.view.View;
 import android.widget.CompoundButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +54,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.moonface.Util.DrawableUtil;
+import com.moonface.Util.FileUtil;
+import com.moonface.Util.FirebaseUtil;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 public class PaintActivity extends AppCompatActivity {
 	
@@ -89,6 +100,9 @@ public class PaintActivity extends AppCompatActivity {
 	private SeekBar seekbar1;
 
 	private int colorBefore = 0;
+	private String url;
+	private File folder;
+	private File cacheFolder;
 	private View viewBefore = null;
 	private String paintingName;
 	private SharedPreferences data;
@@ -105,7 +119,18 @@ public class PaintActivity extends AppCompatActivity {
 	}
 	
 	private void initialize() {
-		
+		cacheFolder = new File(getExternalCacheDir().toString() + "/paintings");
+		if(!cacheFolder.exists()){
+			if(!folder.mkdir()){
+				Log.d("Paint", "Can't create folder");
+			}
+		}
+        folder = new File(cacheFolder.getPath() + "/" + FirebaseAuth.getInstance().getCurrentUser().getUid());
+        if(!folder.exists()){
+            if(!folder.mkdir()){
+                Log.d("Paint", "Can't create folder");
+            }
+        }
 		_toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -329,7 +354,13 @@ public class PaintActivity extends AppCompatActivity {
 		});
 	}
 	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#4f9a94"));
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+		}
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			w.setStatusBarColor(Color.parseColor("#4f9a94"));
+		}
 		_set_scale(red);
 		_setview();
 		dv = new DrawingView(this);linear2.addView(dv);
@@ -341,11 +372,6 @@ public class PaintActivity extends AppCompatActivity {
 		mPaint.setStrokeJoin(Paint.Join.ROUND);
 		mPaint.setStrokeCap(Paint.Cap.ROUND);
 		mPaint.setStrokeWidth(12);
-        final File tempFile;
-        Uri fileUri;
-        tempFile = new File(getExternalCacheDir().toString() + "/saved_image.jpg");
-        fileUri = FileProvider.getUriForFile(getApplicationContext(), getString(R.string.authorities), tempFile);
-        final Uri finalFileUri = fileUri;
         final ProgressDialog progressDialog = new ProgressDialog(PaintActivity.this);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
@@ -353,7 +379,7 @@ public class PaintActivity extends AppCompatActivity {
         progressDialog.show();
         paintingData.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final ArrayList<HashMap<String, Object>> retrieve_list = new ArrayList<>();
                 try {
                     GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
@@ -367,7 +393,7 @@ public class PaintActivity extends AppCompatActivity {
                 }
                 CharSequence names[] = new CharSequence[retrieve_list.size()+1];
                 SpannableString boldOption = new SpannableString(getString(R.string.create_new_painting));
-                boldOption.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0, getString(R.string.create_new_painting).length(),0);
+                boldOption.setSpan(new StyleSpan(Typeface.BOLD), 0, getString(R.string.create_new_painting).length(),0);
                 names[0] = boldOption;
                 for(int i=0; i<retrieve_list.size(); i++){
                     names[i+1] = retrieve_list.get(i).get("name").toString();
@@ -384,7 +410,7 @@ public class PaintActivity extends AppCompatActivity {
                             dialayout.setOrientation(LinearLayout.VERTICAL);
 
                             final EditText diaedittext = new EditText(getApplicationContext());
-                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                             layoutParams.setMargins(8,8,8,8);
                             diaedittext.setLayoutParams(layoutParams);
                             dialayout.addView(diaedittext);
@@ -404,42 +430,54 @@ public class PaintActivity extends AppCompatActivity {
                                     	if(paintingName.equals(retrieve_list.get(i).get("name").toString())){
                                             Toast.makeText(getApplicationContext(), getString(R.string.paint_name_message), Toast.LENGTH_LONG).show();
                                             builder.show();
+                                            break;
 										}
 									}
+                                    for (char c : paintingName.toCharArray()) {
+                                        if (!Character.isLetterOrDigit(c)){
+                                            Toast.makeText(getApplicationContext(), getString(R.string.paint_name_invalid), Toast.LENGTH_LONG).show();
+                                            builder.show();
+                                            break;
+                                        }
+                                    }
                                     linear2.setBackgroundColor(Color.parseColor("#EEEEEE"));
+
                                 }
                             });
                             edittextdialog.create().show();
                         } else {
-                            String url = retrieve_list.get(which-1).get("url").toString();
+                            url = retrieve_list.get(which-1).get("url").toString();
                             paintingName = retrieve_list.get(which-1).get("name").toString();
                             final ProgressDialog progress = new ProgressDialog(PaintActivity.this);
                             progress.setCancelable(false);
                             progress.setTitle(R.string.paint_prog_title);
-                            progress.setMax(100);
                             progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                            _storage.getReferenceFromUrl(url).getFile(tempFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                    progress.dismiss();
-                                    try {
-                                        InputStream is = getContentResolver().openInputStream(finalFileUri);
-                                        Drawable bg_img = Drawable.createFromStream(is, finalFileUri.toString());
-                                        linear2.setBackground(bg_img);
+                            progress.setIndeterminate(true);
+                            progress.show();
+                            File pictureFile = new File(folder.toString() + "/" + paintingName + ".jpg");
+                            if(pictureFile.exists()) {
+                                linear2.setBackground(DrawableUtil.BitmapToDrawable(FileUtil.getBitmap(pictureFile, getApplicationContext()), getApplicationContext()));
+                                progress.dismiss();
+                                Toast.makeText(getApplicationContext(), getString(R.string.painting_loaded_successfully_message), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Picasso.get().load(url).into(new Target() {
+                                    @Override
+                                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                        linear2.setBackground(new BitmapDrawable(getResources(), bitmap));
+                                        progress.dismiss();
                                         Toast.makeText(getApplicationContext(), getString(R.string.painting_loaded_successfully_message), Toast.LENGTH_SHORT).show();
                                     }
-                                    catch (FileNotFoundException e) {
-                                        Log.e("FileNotFoundException", e.toString());
+
+                                    @Override
+                                    public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
                                     }
-                                }
-                            }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
-                                @Override
-                                public void onProgress(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                    double progress_value = 100 * taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount();
-                                    progress.setProgress(Integer.parseInt(String.valueOf(Math.round(progress_value))));
-                                }
-                            });
-                            progress.show();
+
+                                    @Override
+                                    public void onPrepareLoad(Drawable placeHolderDrawable) {
+                                    }
+                                });
+                            }
                         }
                     }
                 });
@@ -449,8 +487,8 @@ public class PaintActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                databaseError.toException().printStackTrace();
             }
         });
     }
@@ -525,7 +563,13 @@ public class PaintActivity extends AppCompatActivity {
 		final AlertDialog.Builder exit_dialog = new AlertDialog.Builder(this);
 		exit_dialog.setTitle(R.string.exit);
 		exit_dialog.setMessage(getString(R.string.save_before_exit_message) + paintingName + "?");
-		exit_dialog.setPositiveButton(R.string.save_button, new DialogInterface.OnClickListener() {
+		String save_button;
+		if(url != null){
+		    save_button = getString(R.string.save_changes_button);
+        } else {
+		    save_button = getString(R.string.save_button);
+        }
+		exit_dialog.setPositiveButton(save_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 _save_method(linear2, true);
@@ -580,44 +624,42 @@ public class PaintActivity extends AppCompatActivity {
             canvas.drawColor(Color.WHITE);
         }
         _view.draw(canvas);
-        File pictureFile = null;
-        try {
-            pictureFile = new File(getExternalCacheDir().toString() + "/saved_image.jpg");
-            FileOutputStream fos = new FileOutputStream(pictureFile);
-            image.compress(Bitmap.CompressFormat.PNG, 0, fos);
-            fos.close();
-        } catch (FileNotFoundException e) {
-            Log.d("MainActivity", "File not found: " + e.getMessage());
-            Toast.makeText(getApplicationContext(), getString(R.string.error_occurred_message), Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            Log.d("MainActivity", "Error accessing file: " + e.getMessage());
-            Toast.makeText(getApplicationContext(), getString(R.string.error_occurred_message), Toast.LENGTH_SHORT).show();
-        }
-        final File finalPictureFile = pictureFile;
+        File pictureFile = FileUtil.saveBitmap(image, folder.toString() + "/" + paintingName + ".jpg");
         final ProgressDialog progress = new ProgressDialog(PaintActivity.this);
         progress.setCancelable(false);
         progress.setTitle(R.string.paint_prog_upload_title);
         progress.setMax(100);
         progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        paintingReference.child(data.getString("id", "")).child(paintingName).putFile(FileProvider.getUriForFile(getApplicationContext(), getString(R.string.authorities), finalPictureFile)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        StorageReference saveReference;
+        saveReference = paintingReference.child(data.getString("id", "")).child(paintingName);
+        saveReference.putFile(FileProvider.getUriForFile(getApplicationContext(), getString(R.string.authorities), pictureFile)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+            public void onSuccess(final UploadTask.TaskSnapshot taskSnapshot) {
                 progress.dismiss();
-                HashMap<String, Object> fileMetadata = new HashMap<>();
+                final HashMap<String, Object> fileMetadata = new HashMap<>();
                 fileMetadata.put("name", paintingName);
-                fileMetadata.put("url", taskSnapshot.getStorage().getDownloadUrl().toString());
-                paintingData.child(paintingName).updateChildren(fileMetadata);
-                finalPictureFile.deleteOnExit();
-                Toast.makeText(getApplicationContext(), getString(R.string.painting_saved_successfully_message), Toast.LENGTH_SHORT).show();
-                if(finish){
-                    finish();
-                }
+                taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+					@Override
+					public void onSuccess(Uri uri) {
+						fileMetadata.put("url", uri.toString());
+						paintingData.child(paintingName).updateChildren(fileMetadata);
+						Toast.makeText(getApplicationContext(), getString(R.string.painting_saved_successfully_message), Toast.LENGTH_SHORT).show();
+						if(finish){
+							finish();
+						}
+					}
+				});
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                 double progress_value = 100 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount();
                 progress.setProgress(Integer.parseInt(String.valueOf(Math.round(progress_value))));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                e.printStackTrace();
             }
         });
         progress.show();

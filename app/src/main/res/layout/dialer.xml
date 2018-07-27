@@ -71,8 +71,7 @@
 			</LinearLayout>
 
 			<LinearLayout
-				android:id="@+id/linear26"
-				android:layout_width="match_parent"
+                android:layout_width="match_parent"
 				android:layout_height="2dp"
 				android:background="#E0E0E0"
 				android:orientation="horizontal" />
@@ -113,8 +112,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear12"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="center_horizontal"
@@ -161,8 +159,7 @@
 					android:padding="8dp">
 
 					<LinearLayout
-						android:id="@+id/linear15"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="end"
@@ -181,8 +178,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear16"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="center_horizontal"
@@ -201,8 +197,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear17"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="start"
@@ -222,8 +217,7 @@
 				</LinearLayout>
 
 				<LinearLayout
-					android:id="@+id/linear9"
-					android:layout_width="match_parent"
+                    android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="horizontal"
 					android:padding="8dp">
@@ -249,8 +243,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear19"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="center_horizontal"
@@ -269,8 +262,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear20"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="start"
@@ -297,8 +289,7 @@
 					android:padding="8dp">
 
 					<LinearLayout
-						android:id="@+id/linear21"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="end"
@@ -338,8 +329,7 @@
 					</LinearLayout>
 
 					<LinearLayout
-						android:id="@+id/linear23"
-						android:layout_width="wrap_content"
+                        android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:layout_weight="1"
 						android:gravity="start"
@@ -361,8 +351,7 @@
 			</LinearLayout>
 
 			<LinearLayout
-				android:id="@+id/linear25"
-				android:layout_width="match_parent"
+                android:layout_width="match_parent"
 				android:layout_height="2dp"
 				android:background="#E0E0E0"
 				android:orientation="horizontal" />

@@ -1,5 +1,6 @@
 package com.moonface.home;
 
+import android.net.Uri;
 import android.os.*;
 import android.provider.MediaStore;
 import android.view.ViewGroup;
@@ -25,7 +26,11 @@ import android.view.View;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.moonface.Util.DrawableUtil;
+import com.squareup.picasso.Picasso;
 
 public class MyAccountActivity extends AppCompatActivity {
 
@@ -42,8 +47,8 @@ public class MyAccountActivity extends AppCompatActivity {
 
 	private SharedPreferences data;
 	private Intent logout_int = new Intent();
-	private SharedPreferences auth;
 	private FirebaseAuth userAuth;
+	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	private AlertDialog.Builder descriptionDialog;
 	private AlertDialog.Builder reset_password_dialog;
 	@Override
@@ -77,7 +82,6 @@ public class MyAccountActivity extends AppCompatActivity {
 		linear_reset_password = findViewById(R.id.linear_reset_password);
 		linear_signout = findViewById(R.id.linear_signout);
 		data = getSharedPreferences("data", Activity.MODE_PRIVATE);
-		auth = getSharedPreferences("auth", Activity.MODE_PRIVATE);
 		userAuth = FirebaseAuth.getInstance();
 		descriptionDialog = new AlertDialog.Builder(this);
 		reset_password_dialog = new AlertDialog.Builder(this);
@@ -164,7 +168,12 @@ public class MyAccountActivity extends AppCompatActivity {
 		linear_signout.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				auth.edit().putString("logout", "1").apply();
+				DatabaseReference userdata = _firebase.getReference("users").child(userAuth.getCurrentUser().getUid());
+				String deviceToken = FirebaseInstanceId.getInstance().getToken();
+				if (deviceToken != null) {
+					userdata.child("device_token").child(deviceToken).removeValue();
+				}
+			    userAuth.signOut();
 				logout_int.setClass(getApplicationContext(), MainActivity.class);
 				logout_int.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(logout_int);
@@ -177,29 +186,12 @@ public class MyAccountActivity extends AppCompatActivity {
 		id.setText(data.getString("id", ""));
 		nickname.setText(data.getString("nickname", ""));
 		profile_title.setText(data.getString("nickname", ""));
-		try {
-			Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), SignInFragment.profileUri);
-			imageBitmap = DrawableUtil.getResizedBitmap(imageBitmap, 256);
-			imageBitmap = DrawableUtil.getSquaredBitmap(imageBitmap);
-			imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap, profile_pic.getWidth());
-			profile_pic.setImageBitmap(imageBitmap);
-		}
-		catch (IOException io){
-			Log.e("", io.toString());
-		}
-		_setRipple(linear_email);
-		_setRipple(linear_id);
-		_setRipple(linear_nickname);
-		_setRipple(linear_signout);
+		Picasso.get().load(data.getString("profile_pic","")).transform(new DrawableUtil.CircleTransform()).into(profile_pic);
 	}
 	
 	@Override
 	public void onBackPressed() {
 		finish();
-	}
-	private void _setRipple (final View _view) {
-		android.graphics.drawable.RippleDrawable ripdr = new android.graphics.drawable.RippleDrawable(new android.content.res.ColorStateList(new int[][]{new int[]{}}, new int[]{ 0xFFBDBDBD}), new android.graphics.drawable.ColorDrawable(Color.WHITE), null);
-		_view.setBackground(ripdr);
 	}
 	
 	

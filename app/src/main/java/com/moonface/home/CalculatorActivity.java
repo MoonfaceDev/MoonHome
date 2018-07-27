@@ -71,7 +71,7 @@ public class CalculatorActivity extends AppCompatActivity {
 	private void initialize() {
 
 		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#009faf"));
-		_toolbar = (Toolbar) findViewById(R.id._toolbar);
+		_toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
@@ -81,25 +81,25 @@ public class CalculatorActivity extends AppCompatActivity {
 				onBackPressed();
 			}
 		});
-		result = (TextView) findViewById(R.id.result);
-		sub_result = (TextView) findViewById(R.id.sub_result);
-		clear = (ImageView) findViewById(R.id.clear);
-		num7 = (Button) findViewById(R.id.num7);
-		num8 = (Button) findViewById(R.id.num8);
-		num9 = (Button) findViewById(R.id.num9);
-		divide = (Button) findViewById(R.id.divide);
-		num4 = (Button) findViewById(R.id.num4);
-		num5 = (Button) findViewById(R.id.num5);
-		num6 = (Button) findViewById(R.id.num6);
-		multiply = (Button) findViewById(R.id.multiply);
-		num1 = (Button) findViewById(R.id.num1);
-		num2 = (Button) findViewById(R.id.num2);
-		num3 = (Button) findViewById(R.id.num3);
-		minus = (Button) findViewById(R.id.minus);
-		num0 = (Button) findViewById(R.id.num0);
-		dot = (Button) findViewById(R.id.dot);
-		equal = (Button) findViewById(R.id.equal);
-		plus = (Button) findViewById(R.id.plus);
+		result = findViewById(R.id.result);
+		sub_result = findViewById(R.id.sub_result);
+		clear = findViewById(R.id.clear);
+		num7 = findViewById(R.id.num7);
+		num8 = findViewById(R.id.num8);
+		num9 = findViewById(R.id.num9);
+		divide = findViewById(R.id.divide);
+		num4 = findViewById(R.id.num4);
+		num5 = findViewById(R.id.num5);
+		num6 = findViewById(R.id.num6);
+		multiply = findViewById(R.id.multiply);
+		num1 = findViewById(R.id.num1);
+		num2 = findViewById(R.id.num2);
+		num3 = findViewById(R.id.num3);
+		minus = findViewById(R.id.minus);
+		num0 = findViewById(R.id.num0);
+		dot = findViewById(R.id.dot);
+		equal = findViewById(R.id.equal);
+		plus = findViewById(R.id.plus);
 	}
 	private void initializeLogic() {
         decimalFormat = new DecimalFormat("#.##########");

@@ -1,18 +1,15 @@
 package com.moonface.home;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.FileProvider;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +21,6 @@ import android.widget.Toast;
 import com.moonface.Util.PermissionsRequest;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -53,7 +49,10 @@ public class CameraActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#c4001c"));
+        Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            w.setStatusBarColor(Color.parseColor("#c4001c"));
+        }
         if(!getResources().getBoolean(R.bool.is_right_to_left)) {
             tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.photo)));
             tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.video)));
@@ -89,11 +88,7 @@ public class CameraActivity extends AppCompatActivity {
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 1) {
-            try {
-                CameraFragment1.photoPreview(requestCode, resultCode, data, getApplicationContext());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            CameraFragment1.photoPreview(requestCode, resultCode, getApplicationContext());
         }
         if(requestCode == 2){
             CameraFragment2.videoPreview(requestCode, resultCode, data, getApplicationContext());

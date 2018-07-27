@@ -1,64 +1,35 @@
 package com.moonface.home;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
 import com.moonface.Util.InputUtil;
 import com.moonface.Util.PermissionsRequest;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Timer;
 
 public class SignInFragment extends Fragment {
-    private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
-
-    private HashMap<String, Object> data_update = new HashMap<>();
     private String emailAddress = "";
-    private Intent home_int = new Intent();
-    private DatabaseReference userdata;
-    private SharedPreferences data;
     private FirebaseAuth userAuth;
     private OnCompleteListener<AuthResult> _userAuth_sign_in_listener;
     private AlertDialog.Builder edittextdialog;
-    private FirebaseStorage _storage = FirebaseStorage.getInstance();
-    public static Uri profileUri;
-    private CheckBox checkbox2;
     private TextView forgotpass_button;
     private EditText email_login;
     private EditText password_login;
@@ -71,7 +42,6 @@ public class SignInFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        data = getActivity().getSharedPreferences("data", Activity.MODE_PRIVATE);
         edittextdialog = new AlertDialog.Builder(getContext());
         userAuth = FirebaseAuth.getInstance();
         MainActivity.CURRENT_FRAGMENT = 1;
@@ -79,7 +49,6 @@ public class SignInFragment extends Fragment {
         final TextInputLayout email_input_layout = view.findViewById(R.id.email_input_layout);
         password_login = view.findViewById(R.id.password_login);
         final TextInputLayout password_input_layout = view.findViewById(R.id.password_input_layout);
-        checkbox2 = view.findViewById(R.id.checkbox2);
         forgotpass_button = view.findViewById(R.id.forgotpass_button);
         final Button login_button = view.findViewById(R.id.login_button);
         final TextView signuptab_button = view.findViewById(R.id.signuptab_button);
@@ -158,7 +127,6 @@ public class SignInFragment extends Fragment {
                 viewArrayList.add(signuptab_button);
                 viewArrayList.add(email_input_layout);
                 viewArrayList.add(password_input_layout);
-                viewArrayList.add(checkbox2);
                 viewArrayList.add(forgotpass_button);
                 viewArrayList.add(signup_label);
                 ArrayList<String> stringArrayList = new ArrayList<>();
@@ -168,7 +136,6 @@ public class SignInFragment extends Fragment {
                 stringArrayList.add("tab_button");
                 stringArrayList.add("email_input_layout");
                 stringArrayList.add("password_input_layout");
-                stringArrayList.add("checkbox");
                 stringArrayList.add("button");
                 stringArrayList.add("sign_label");
                 MainActivity.setCurrentFragment(getActivity().getSupportFragmentManager(), new SignUpFragment(), viewArrayList, stringArrayList);
@@ -180,81 +147,17 @@ public class SignInFragment extends Fragment {
                 final boolean _success = _param1.isSuccessful();
                 final String _errorMessage = _param1.getException() != null ? _param1.getException().getMessage() : "";
                 if (_success) {
-                    _logdata();
+                    prog.dismiss();
+                    Intent intent = new Intent();
+                    intent.setClass(getContext(), BootAnimationActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
                 } else {
                     SketchwareUtil.showMessage(getContext(), _errorMessage);
                     prog.dismiss();
                 }
             }
         };
-        if (data.getString("remember_me", "").equals("1")) {
-            email_login.setText(data.getString("email", ""));
-            password_login.setText(data.getString("password", ""));
-            checkbox2.setChecked(true);
-        }
-    }
-
-    private void _logdata() {
-        data.edit().putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid()).apply();
-        userdata = _firebase.getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot _dataSnapshot) {
-                data_update = new HashMap<>();
-                try {
-                   data_update = (HashMap<String, Object>) _dataSnapshot.getValue();
-                } catch (Exception _e) {
-                    _e.printStackTrace();
-                }
-                data.edit().putString("email", data_update.get("user").toString()).apply();
-                data.edit().putString("nickname", data_update.get("name").toString()).apply();
-                data.edit().putBoolean("admin", Boolean.valueOf(data_update.get("admin").toString())).apply();
-                data.edit().putString("background", data_update.get("background").toString()).apply();
-                File file = null;
-                try {
-                    file = File.createTempFile(data.getString("id", "") + "_profile_pic", ".jpg", getContext().getExternalFilesDir(Environment.DIRECTORY_DCIM));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                profileUri = FileProvider.getUriForFile(getContext(), getString(R.string.authorities), file);
-                _storage.getReferenceFromUrl(data_update.get("profile_pic_url").toString()).getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        if (checkbox2.isChecked()) {
-                            data.edit().putString("password", password_login.getText().toString()).apply();
-                            data.edit().putString("remember_me", "1").apply();
-                            data.edit().putString("email", FirebaseAuth.getInstance().getCurrentUser().getEmail()).apply();
-                            data.edit().putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid()).apply();
-                            home_int.setClass(getContext(), BootAnimationActivity.class);
-                            startActivity(home_int);
-                            getActivity().finish();
-                        } else {
-                            data.edit().putString("email", "").apply();
-                            data.edit().putString("password", "").apply();
-                            data.edit().putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid()).apply();
-                            home_int.setClass(getContext(), BootAnimationActivity.class);
-                            startActivity(home_int);
-                            getActivity().finish();
-                        }
-                        prog.dismiss();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        FirebaseAuth.getInstance().signOut();
-                        Toast.makeText(getContext(), R.string.cant_find_data_message, Toast.LENGTH_SHORT).show();
-                        prog.dismiss();
-                    }
-                });
-                data_update.clear();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError _databaseError) {
-                Toast.makeText(getContext(), R.string.cant_find_data_message, Toast.LENGTH_SHORT).show();
-                prog.dismiss();
-            }
-        });
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {

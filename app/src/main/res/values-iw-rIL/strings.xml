@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_activity_login">כניסה</string>
-    <string name="prompt_email">אימייל</string>
-    <string name="prompt_password">סיסמה (אופציונלי)</string>
-    <string name="action_sign_in">כנס או הירשם</string>
-    <string name="action_sign_in_short">כניסה</string>
-    <string name="error_invalid_email">אימייל זה שגוי</string>
-    <string name="error_invalid_password">הסיסמה קצרה מדי</string>
-    <string name="error_incorrect_password">הסיסמה שגויה</string>
-    <string name="error_field_required">שדה זה נחוץ</string>
-    <string name="permission_rationale">הרשאת אנשי קשר דרושה על מנת לספק השלמה אוטומטית של אימייל</string>
-    <string name="hello_blank_fragment">פרגמנט ריק</string>
-    <string name="default_notification_channel_id">עדכוני MoonHome</string>
     <string name="moonhome_version_label">גרסת MoonHome</string>
     <string name="check_for_update">חפש עדכונים</string>
     <string name="contact_us">צור קשר</string>
@@ -127,7 +115,6 @@
     <string name="do_not_disturb_access_message">הגדרות MoonHome דורשות גישה למצב נא לא להפריע</string>
     <string name="access_granted_message">הגישה התקבלה</string>
     <string name="access_denied_message">הגישה נדחתה</string>
-    <string name="language_label">שפה</string>
     <string name="background_label">רקע</string>
     <string name="moonface_s_version_label">גרסת MoonHome</string>
     <string name="connecting_server">מתחבר לשרת…</string>
@@ -143,7 +130,6 @@
     <string name="password_recovery_label">שחזור סיסמה</string>
     <string name="cant_find_data_message">לא ניתן לאתר נתונים!</string>
     <string name="sign_in_label">כניסה</string>
-    <string name="remember_me_label">זכור אותי</string>
     <string name="forgot_password_label">שכחת את הסיסמה?</string>
     <string name="login_label">כניסה</string>
     <string name="don_t_have_an_account_label">אין לך משתמש?</string>
@@ -172,7 +158,6 @@
     <string name="ok">אישור</string>
     <string name="vs">נגד</string>
     <string name="choose_your_side_label">בחר צד:</string>
-    <string name="subject_label">נושא</string>
     <string name="agree_label">אני מסכים ל</string>
     <string name="settings_item">הגדרות</string>
     <string name="account_item">משתמש</string>
@@ -203,7 +188,6 @@
     <string name="about_label">אודות</string>
     <string name="erase_label">מחיקה</string>
     <string name="painting_saved_successfully_message">הציור נשמר בהצלחה</string>
-    <string name="error_occurred_message">התרחשה שגיאה</string>
     <string name="paint_save_hint">שם הציור</string>
     <string name="paint_save_title">יצירת ציור</string>
     <string name="paint_save_button">צור</string>
@@ -240,7 +224,6 @@
 \n\n
 *עמוד זה נכתב בלשון זכר מטעמי נוחות בלבד, אך מיועד לנשים וגברים כאחד.</string>
     <string name="terms_and_conditions">בכך שאתה מוריד או משתמש באפליקציה, תנאים אלו חלים עליך באופן אוטומטי - אתה צריך לוודא שקראת אותם בקפידה לפני השימוש באפליקציה.        \n\nקוד המקור שלך האפליקציה פתוח - ויהיה זמין בקרוב בGithub לכל שימוש חוקי. האפליקציה עצמה, כל סמליה, זכויות יוצרים, זכויות מאגר המידע וכל קניין רוחני אחר הקשור לה, שייכים לMoonface.         \n\n צוות Moonface מחויב לוודא שהאפליקציה שימושית ויעילה ככל האפשר. לכן, אנו שומרים לעצמנו את הזכות לערוך שינויים, בכל זמן ומכל סיבה.        \n\nאפליקציית MoonHome מאחסנת ומעבדת מידע אישי שסיפקת לנו, כדי לספק את השירות ולשפר אותו. זו אחריות שלך לשמור על מכשירך והגישה לאפליקציה בטוחה.        \n\nאתה צריך להיות מודע לכך שישנם מספר דברים שMoonface לא תיקח אחריות עליהם. השימוש באפליקציה ידרוש חיבור פעיל לאינטרנט. החיבור יכול להיות Wi-Fi, או מסופק על ידי ספק הרשת הניידת שלך, אבל Moonface לא יכולה לקחת אחריות אם האפליקציה לא עובדת אם אין לך גישה לWi-Fi ועברת את מגבלת הנתונים שלך.\n        \nאם אתה משתמש באפליקציה מחוץ לאזור עם Wi-Fi אתה צריך לזכור שהתנאים של ההסכם שלך עם ספק הרשת הניידת שלך עדיין יחולו. כתוצאה מכך, ייתכן שתחוייב על ידי ספק הרשת הניידת שלך לתשלום על הנתונים בזמן השימוש באפליקציה, או חיובים חיצוניים אחרים. בעצם השימוש באפליקציה, אתה אחראי לכל חיוב כזהף כולל חיובים על נדידת נתונים אם אתה משתמש באפליקציה מחוץ לאזור מגוריך (מחוז או מדינה) בלי לכבות נדידת נתונים. אם אתה לא משלם החשבון של המכשיר בו אתה משתמש באפליקציה, היה מודע לכך שאנחנו מניחים שאתה קיבלת רשות ממשלם החשבון להשתמש באפליקציה.          \n\nכשאתה משתמש באפליקציה, חשוב לזכור שלמרות שאנחנו מתאמצים לוודא שהיא מעודכנת ומדויקת כל הזמן, אנחנו משתמשים בשירותים חיצוניים כדי לספק לנו מידע כך שאנחנו יכולים להפוך אותו לזמין יותר בשבילך. Moonface לא מקבלת כל אחריות לכל הפסד, ישיר או עקיף, שאתה חווה כתוצאה מהסתמכות על פונקציות של האפליקציה.\n        \nבנקודה מסויימת, אנו עשויים לרצות לעדכן את האפליקציה. האפליקציה כרגע זמינה באנדרואיד - הדרישות של המערכת עשויות להשתנות ואתה תצטרך להוריד עדכונים אם אתה רוצה להמשיך להשתמש באפליקציה. Moonface לא מבטיחה שתמיד תעדכן את האפליקציה כך שתישאר רלוונטית בשבילך ו/או עובדת עם גרסת האנדרואיד שמותקנת במכשירך. למרות זאת, אתה מחוייב תמיד להסכים לעדכונים לאפליקציה כאשר הם מוצעים לך. ייתכן שאנחנו נרצה להפסיק לספק את האפליקציה, ונפסיק שימוש שלה בכל זמן גם ללא הודעה של הפסקת השירות לך. אלא אם נאמר לך אחרת, עם כל סיום של מתן השירות, (א) הזכויות והרשיונות שניתנו לך בתנאים אלו יסתיימו; (ב) תחוייב להפסיק להשתמש באפליקציה, ובמידת הצורך להסירה ממכשירך.          \n\nייתכן שנעדכן את התנאים הללו מפעם לפעם. לכן, אנו ממליצים לך לעבור על עמוד זה לעיתים בשביל שינויים. שינויים אלו מתממשים מיד לאחר שהם מפורסמים בעמוד זה. אם יש לך שאלות כלשהן, או הצעות לגבי התנאים,  אל תהסס ליצור קשר. \n\n *עמוד זה נכתב בלשון זכר מטעמי נוחות בלבד, אך מיועד לנשים וגברים כאחד.</string>
-    <string name="language">עברית</string>
     <string name="send_item">שלח</string>
     <string name="add_game_item">הוסף משחק</string>
     <string name="set_background_item">בחר רקע</string>
@@ -255,4 +238,6 @@
     <string name="file_deleted_success">הקובץ נמחק בהצלחה</string>
     <string name="send_video_label">שלח וידאו</string>
     <string name="paint_name_blank_message">בחר שם לציור</string>
+    <string name="save_changes_button">שמור שינויים</string>
+    <string name="paint_name_invalid">שם הציור לא יכול לכלול תוים מיוחדים</string>
 </resources>

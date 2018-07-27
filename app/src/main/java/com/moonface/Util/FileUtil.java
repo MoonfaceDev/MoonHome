@@ -47,12 +47,13 @@ public class FileUtil {
             Log.d("FileUtil", "Error accessing file: " + e.getMessage());
         }
     }
-    public static void saveBitmap(Bitmap bitmap, String path){
+    public static File saveBitmap(Bitmap bitmap, String path){
         File pictureFile = new File(path);
         try {
             FileOutputStream fos = new FileOutputStream(pictureFile);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
             fos.close();
+            return pictureFile;
         }
         catch (FileNotFoundException e) {
             Log.d("FileUtil", "File not found: " + e.getMessage());
@@ -60,10 +61,21 @@ public class FileUtil {
         catch (IOException e) {
             Log.d("FileUtil", "Error accessing file: " + e.getMessage());
         }
+        return null;
     }
     public static Bitmap getBitmap(Uri uri, Context context){
         try {
             InputStream is = context.getContentResolver().openInputStream(uri);
+            return BitmapFactory.decodeStream(is);
+        }
+        catch (FileNotFoundException e) {
+            Log.e("FileNotFoundException", e.toString());
+        }
+        return null;
+    }
+    public static Bitmap getBitmap(File file, Context context){
+        try {
+            InputStream is = context.getContentResolver().openInputStream(FileProvider.getUriForFile(context, context.getPackageName()+".fileprovider", file));
             return BitmapFactory.decodeStream(is);
         }
         catch (FileNotFoundException e) {
@@ -77,5 +89,14 @@ public class FileUtil {
     }
     public static Uri getUri(Context context, File file){
         return FileProvider.getUriForFile(context, context.getString(R.string.authorities), file);
+    }
+    public static void createFolder(String path, String folderName){
+        String myfolder = path + "/" + folderName;
+        File f=new File(myfolder);
+        if(!f.exists()) {
+            if (!f.mkdir()) {
+                Log.d("FileUtil", "Can't create folder");
+            }
+        }
     }
 }

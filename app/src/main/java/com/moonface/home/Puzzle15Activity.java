@@ -1,35 +1,40 @@
 package com.moonface.home;
 
-import android.os.*;
-import android.view.*;
-import android.widget.*;
-import android.graphics.*;
-import android.util.*;
-
-import java.util.*;
-
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import java.util.ArrayList;
-import java.util.HashMap;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
 import android.content.SharedPreferences;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.ChildEventListener;
-import android.app.Activity;
-import android.view.View;
+import com.google.firebase.database.ValueEventListener;
+import com.moonface.Util.InputUtil;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Puzzle15Activity extends AppCompatActivity {
 	
@@ -240,8 +245,11 @@ public class Puzzle15Activity extends AppCompatActivity {
 		});
 	}
 	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#ba000d"));
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { 
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            w.setStatusBarColor(Color.parseColor("#ba000d"));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			textview1.setElevation(10f);
 			textview2.setElevation(10f);
 			textview3.setElevation(10f);
@@ -259,8 +267,28 @@ public class Puzzle15Activity extends AppCompatActivity {
 			textview15.setElevation(10f);
 			textview16.setElevation(10f);
 			linear_game.setElevation(5f);
+			int screenWidth = InputUtil.getDisplayWidthPixels(this);
+			int boardWidth = screenWidth/4*3;
+			int cellWidth = boardWidth/4;
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(cellWidth,cellWidth);
+			textview1.setLayoutParams(params);
+            textview2.setLayoutParams(params);
+            textview3.setLayoutParams(params);
+            textview4.setLayoutParams(params);
+            textview5.setLayoutParams(params);
+            textview6.setLayoutParams(params);
+            textview7.setLayoutParams(params);
+            textview8.setLayoutParams(params);
+            textview9.setLayoutParams(params);
+            textview10.setLayoutParams(params);
+            textview11.setLayoutParams(params);
+            textview12.setLayoutParams(params);
+            textview13.setLayoutParams(params);
+            textview14.setLayoutParams(params);
+            textview15.setLayoutParams(params);
+            textview16.setLayoutParams(params);
 		}
-		android.graphics.drawable.GradientDrawable linearLy = new android.graphics.drawable.GradientDrawable();  linearLy.setColor(0xFF263238);  linearLy.setCornerRadius(10);  linear_game.setBackground(linearLy);
+		GradientDrawable linearLy = new GradientDrawable();  linearLy.setColor(0xFF263238);  linearLy.setCornerRadius(10);  linear_game.setBackground(linearLy);
         highscoreData.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot _dataSnapshot) {

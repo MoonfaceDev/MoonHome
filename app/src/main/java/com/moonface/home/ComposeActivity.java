@@ -3,7 +3,9 @@ package com.moonface.home;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseBooleanArray;
@@ -93,9 +95,13 @@ public class ComposeActivity extends AppCompatActivity {
 			}
 		});
 	}
-	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#c79100"));
-		listview1.setVisibility(View.GONE);
+    private void initializeLogic() {
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            w.setStatusBarColor(Color.parseColor("#c79100"));
+        }
+        listview1.setVisibility(View.GONE);
 		from.setText(data.getString("email", ""));
 		user_list.addListenerForSingleValueEvent(new ValueEventListener() {
 			@Override
@@ -151,6 +157,7 @@ public class ComposeActivity extends AppCompatActivity {
 		switch (item.getItemId()) {
 			case R.id.action_send:
 			    getIdFromEmail(edittext1.getText().toString());
+			    finish();
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
@@ -187,12 +194,13 @@ public class ComposeActivity extends AppCompatActivity {
         in_map.put("subject", subject.getText().toString());
         in_map.put("to", edittext1.getText().toString());
         in_map.put("from", from.getText().toString());
+        in_map.put("from_id", data.getString("id",""));
         in_map.put("email", compose_email.getText().toString());
         time = Calendar.getInstance();
         in_map.put("date", new SimpleDateFormat("dd/MM HH:mm").format(time.getTime()));
         inbox = _firebase.getReference("users").child(toId).child("inbox");
         inbox.push().updateChildren(in_map);
-        finish();
+        Toast.makeText(this, getString(R.string.email_sent_message), Toast.LENGTH_SHORT).show();
     }
 	@Deprecated
 	public void showMessage(String _s) {

@@ -20,8 +20,7 @@
 		android:orientation="vertical"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior">
 		<ScrollView
-			android:id="@+id/vscroll2"
-			android:layout_width="match_parent"
+            android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="#FFFFFF">
 			<LinearLayout
@@ -32,7 +31,6 @@
 				android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linear_background"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:gravity="center_vertical"
@@ -59,7 +57,6 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
-                        android:id="@+id/linear25"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -90,7 +87,6 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview8"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
@@ -100,7 +96,6 @@
                         android:src="@drawable/ic_system_update_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear34"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -124,7 +119,6 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear27"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -167,7 +161,6 @@
                         android:src="@drawable/ic_phone_android_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear35"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -204,7 +197,6 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview5"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginEnd="8dp"
@@ -214,7 +206,6 @@
                         android:src="@drawable/ic_translate_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear36"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -261,7 +252,6 @@
                         android:src="@drawable/ic_android_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear37"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -298,7 +288,6 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview7"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
@@ -308,7 +297,6 @@
                         android:src="@drawable/ic_crop_free_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear38"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -355,7 +343,6 @@
                         android:src="@drawable/ic_battery_full_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear43"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -386,7 +373,6 @@
 					android:background="?android:attr/listDivider" />
 
                 <LinearLayout
-                    android:id="@+id/linear_media_volume"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:gravity="center_vertical"
@@ -395,7 +381,6 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview11"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
@@ -405,7 +390,6 @@
                         android:src="@drawable/ic_audiotrack_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear48"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -430,7 +414,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_ring_volume"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:gravity="center_vertical"
@@ -439,17 +422,15 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview12"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:padding="4dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_call_grey" />
+                        app:srcCompat="@drawable/ic_notifications_none_black_24dp"/>
 
                     <LinearLayout
-                        android:id="@+id/linear52"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -474,7 +455,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/linear_alarm_volume"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:gravity="center_vertical"
@@ -483,7 +463,6 @@
                     android:paddingTop="5dp">
 
                     <ImageView
-                        android:id="@+id/imageview13"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="8dp"
@@ -493,7 +472,6 @@
                         android:src="@drawable/ic_access_alarms_grey" />
 
                     <LinearLayout
-                        android:id="@+id/linear59"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

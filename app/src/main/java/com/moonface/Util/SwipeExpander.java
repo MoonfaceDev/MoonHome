@@ -56,7 +56,7 @@ public class SwipeExpander {
                         expansion.setFloatValues((float) (peekLength));
                         break;
                 }
-                expansion.setDuration((int) (100));
+                expansion.setDuration(100);
                 expansion.start();
             }
             else{
@@ -80,7 +80,7 @@ public class SwipeExpander {
                         expansion.setFloatValues((float) (0));
                         break;
                 }
-                expansion.setDuration((int) (100));
+                expansion.setDuration(100);
                 expansion.start();
             }
         }

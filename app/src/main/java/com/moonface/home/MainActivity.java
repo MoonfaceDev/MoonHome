@@ -1,52 +1,47 @@
 package com.moonface.home;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
-import android.os.*;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.FileProvider;
-import android.support.v4.view.ViewCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.transition.ChangeBounds;
 import android.transition.ChangeImageTransform;
 import android.transition.ChangeTransform;
 import android.transition.Fade;
-import android.widget.*;
-import android.content.*;
-import android.util.*;
-import android.transition.TransitionInflater;
 import android.transition.TransitionSet;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import android.support.v7.app.AppCompatActivity;
-import java.util.ArrayList;
+import android.util.Log;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.View;
 import android.widget.ImageView;
-import android.content.Intent;
-import android.app.Activity;
-import android.content.SharedPreferences;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.moonface.Util.DrawableUtil;
 import com.moonface.Util.FileUtil;
 import com.moonface.Util.PermissionsRequest;
 
-import android.view.View;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-	private SharedPreferences data;
-	private SharedPreferences auth;
 	public static ImageView imageview2;
 	private final int CAMERA_REQUEST = 1;
 	private final int PICKER_REQUEST = 2;
@@ -78,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
 	    imageview2 = findViewById(R.id.imageview2);
 	    targetWidth = imageview2.getMaxWidth();
 	    targetHeight = imageview2.getMaxHeight();
-		data = getSharedPreferences("data", Activity.MODE_PRIVATE);
-		auth = getSharedPreferences("auth", Activity.MODE_PRIVATE);
 		imageview2.setOnClickListener(new View.OnClickListener(){
 		    public void onClick(View view){
 		        if(CURRENT_FRAGMENT == 2) {
@@ -121,14 +114,6 @@ public class MainActivity extends AppCompatActivity {
 	}
 
     private void initializeLogic() {
-		if (data.getString("remember_me", "").equals("")) {
-			data.edit().putString("remember_me", "0").apply();
-		}
-		if (auth.getString("logout", "").equals("1")) {
-			auth.edit().putString("logout", "").apply();
-			FirebaseAuth.getInstance().signOut();
-			data.edit().putString("remember_me", "0").apply();
-		}
         FileUtil.removeFolder(getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DCIM).getAbsolutePath());
 	}
 	public static void initializeImageview2(int fragment){
@@ -193,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         Bitmap imageBitmap = DrawableUtil.getSquaredBitmap(photoReducedSizeBitmp);
-                        imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap, imageview2.getWidth());
+                        imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap);
                         imageview2.setImageBitmap(imageBitmap);
                         break;
                 case 2:
@@ -201,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
                         imageBitmap = DrawableUtil.getSquaredBitmap(imageBitmap);
-                        imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap, imageview2.getWidth());
+                        imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap);
                         imageview2.setImageBitmap(imageBitmap);
                     } catch (IOException e) {
                         Log.e("ERROR", e.toString());

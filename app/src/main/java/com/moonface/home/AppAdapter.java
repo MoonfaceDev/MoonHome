@@ -2,9 +2,7 @@ package com.moonface.home;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +43,7 @@ public class AppAdapter extends BaseAdapter {
         });
     }
     private boolean isSystemPackage(ApplicationInfo appInfo) {
-        return (appInfo.flags & appInfo.FLAG_SYSTEM) != 0;
+        return (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
     }
 
     @Override
@@ -74,8 +72,8 @@ public class AppAdapter extends BaseAdapter {
             listViewHolder = new ViewHolder();
             convertView = layoutInflater.inflate(R.layout._installed_app, parent, false);
 
-            listViewHolder.textInListView = (TextView)convertView.findViewById(R.id.list_app_name);
-            listViewHolder.imageInListView = (ImageView)convertView.findViewById(R.id.app_icon);
+            listViewHolder.textInListView = convertView.findViewById(R.id.list_app_name);
+            listViewHolder.imageInListView = convertView.findViewById(R.id.app_icon);
             convertView.setTag(listViewHolder);
         }else{
             listViewHolder = (ViewHolder)convertView.getTag();

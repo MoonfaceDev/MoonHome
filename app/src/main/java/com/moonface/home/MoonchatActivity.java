@@ -1,49 +1,46 @@
 package com.moonface.home;
 
-import android.app.*;
-import android.graphics.drawable.Drawable;
-import android.os.*;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
-import android.view.*;
-import android.view.View.*;
-import android.widget.*;
-import android.content.*;
-import android.graphics.*;
-import android.media.*;
-import android.net.*;
-import android.text.*;
-import android.util.*;
-import android.webkit.*;
-import android.animation.*;
-import android.view.animation.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
-import java.text.*;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import java.util.HashMap;
-import java.util.ArrayList;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ArrayAdapter;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -52,31 +49,25 @@ import com.moonface.Util.FileUtil;
 import com.moonface.Util.InputUtil;
 import com.moonface.Util.ParametersUtil;
 import com.moonface.Util.PermissionsRequest;
+import com.squareup.picasso.Picasso;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import java.util.Calendar;
+import java.io.File;
 import java.text.SimpleDateFormat;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 public class MoonchatActivity extends AppCompatActivity {
 	
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	private FirebaseStorage _storage = FirebaseStorage.getInstance();
-	
-	private Toolbar _toolbar;
-	private double width = 0;
-    private int targetWidth;
-    private int targetHeight;
-    private ArrayList<ChatMessage> chat_map;
+
+	private ArrayList<ChatMessage> chat_map;
 
     private RelativeLayout attach_linear;
 	private ListView listview1;
 	private EditText edittext1;
-	private ImageView send;
-	private ImageView attach;
 	private ImageView attached_image;
-	private ImageView cancel;
 
 	private Intent camera;
 	private Intent picker = new Intent(Intent.ACTION_PICK);
@@ -86,7 +77,6 @@ public class MoonchatActivity extends AppCompatActivity {
 	private Uri uri;
 	private DatabaseReference chat_data = _firebase.getReference("chat");
 	private StorageReference chat_images = _storage.getReference("chat");
-	private ChildEventListener _chat_data_child_listener;
 	private SharedPreferences data;
 	private Calendar time_get = Calendar.getInstance();
 	@Override
@@ -98,8 +88,8 @@ public class MoonchatActivity extends AppCompatActivity {
 	}
 	
 	private void initialize() {
-		
-		_toolbar = findViewById(R.id._toolbar);
+	    chat_data.keepSynced(true);
+		Toolbar _toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
@@ -111,14 +101,12 @@ public class MoonchatActivity extends AppCompatActivity {
 		});
 		listview1 = findViewById(R.id.listview1);
 		edittext1 = findViewById(R.id.edittext1);
-		send = findViewById(R.id.send);
-		attach = findViewById(R.id.attach);
+		ImageView send = findViewById(R.id.send);
+		ImageView attach = findViewById(R.id.attach);
 		attach_linear = findViewById(R.id.attach_linear);
 		attached_image = findViewById(R.id.attached_image);
-		cancel = findViewById(R.id.cancel);
+		ImageView cancel = findViewById(R.id.cancel);
 		data = getSharedPreferences("data", Activity.MODE_PRIVATE);
-        targetWidth = attached_image.getMaxWidth();
-        targetHeight = 300;
 
 		send.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -132,7 +120,6 @@ public class MoonchatActivity extends AppCompatActivity {
 					message.setUid(data.getString("id",""));
 					if(uri != null) {
                         Bitmap bitmap = FileUtil.getBitmap(uri, getApplicationContext());
-                        bitmap = DrawableUtil.getRotatedBitmap(bitmap, DrawableUtil.getRotation(mImageFileLocation));
                         bitmap = DrawableUtil.getResizedBitmap(bitmap, 512);
                         FileUtil.saveBitmap(bitmap, getExternalCacheDir().toString() + "/chatImage.jpg");
                         chat_images.child(uri.getLastPathSegment()).putFile(FileUtil.getUri(getApplicationContext(), new File(getExternalCacheDir().toString() + "/chatImage.jpg"))).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -140,8 +127,13 @@ public class MoonchatActivity extends AppCompatActivity {
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                 boolean delete = new File(getExternalCacheDir().toString() + "/chatImage.jpg").delete();
                                 uri = null;
-                                message.setImageUrl(taskSnapshot.getStorage().getDownloadUrl().toString());
-                                chat_data.push().setValue(message);
+                                taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        message.setImageUrl(uri.toString());
+                                        chat_data.push().setValue(message);
+                                    }
+                                });
                             }
                         });
                         edittext1.setText("");
@@ -210,84 +202,84 @@ public class MoonchatActivity extends AppCompatActivity {
             }
         });
 
-		_chat_data_child_listener = new ChildEventListener() {
+		ChildEventListener _chat_data_child_listener = new ChildEventListener() {
 			@Override
 			public void onChildAdded(DataSnapshot _param1, String _param2) {
-				final String _childKey = _param1.getKey();
 				chat_data.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
-					    chat_map = new ArrayList<>();
+						chat_map = new ArrayList<>();
 						try {
-							GenericTypeIndicator<ChatMessage> _ind = new GenericTypeIndicator<ChatMessage>() {};
-                            for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-                                final ChatMessage _map = _data.getValue(_ind);
-                                _map.setKey(_data.getKey());
-                                chat_map.add(_map);
-                            }
-                            getImage(0);
-						}
-						catch (Exception _e) {
+							GenericTypeIndicator<ChatMessage> _ind = new GenericTypeIndicator<ChatMessage>() {
+							};
+							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+								final ChatMessage _map = _data.getValue(_ind);
+								_map.setKey(_data.getKey());
+								chat_map.add(_map);
+							}
+							final Listview1Adapter adapter = new Listview1Adapter(chat_map);
+							listview1.setAdapter(adapter);
+							adapter.notifyDataSetChanged();
+						} catch (Exception _e) {
 							_e.printStackTrace();
 						}
 					}
+
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
 					}
 				});
 			}
-			
+
 			@Override
 			public void onChildChanged(DataSnapshot _param1, String _param2) {
-				GenericTypeIndicator<HashMap<String, Object>> _ind = new GenericTypeIndicator<HashMap<String, Object>>() {};
-				final String _childKey = _param1.getKey();
-				final HashMap<String, Object> _childValue = _param1.getValue(_ind);
 			}
-			
+
 			@Override
 			public void onChildMoved(DataSnapshot _param1, String _param2) {
-				
+
 			}
-			
+
 			@Override
 			public void onChildRemoved(DataSnapshot _param1) {
-				GenericTypeIndicator<ChatMessage> _ind = new GenericTypeIndicator<ChatMessage>() {};
-				final String _childKey = _param1.getKey();
-				final ChatMessage _childValue = _param1.getValue(_ind);
 				chat_data.addListenerForSingleValueEvent(new ValueEventListener() {
 					@Override
 					public void onDataChange(DataSnapshot _dataSnapshot) {
-                        chat_map = new ArrayList<>();
-                        try {
-                            GenericTypeIndicator<ChatMessage> _ind = new GenericTypeIndicator<ChatMessage>() {};
-                            for (DataSnapshot _data : _dataSnapshot.getChildren()) {
-                                final ChatMessage _map = _data.getValue(_ind);
-                                _map.setKey(_data.getKey());
-                                chat_map.add(_map);
-                            }
-                            getImage(0);
-                        }
-                        catch (Exception _e) {
-                            _e.printStackTrace();
-                        }
+						chat_map = new ArrayList<>();
+						try {
+							GenericTypeIndicator<ChatMessage> _ind = new GenericTypeIndicator<ChatMessage>() {
+							};
+							for (DataSnapshot _data : _dataSnapshot.getChildren()) {
+								final ChatMessage _map = _data.getValue(_ind);
+								_map.setKey(_data.getKey());
+								chat_map.add(_map);
+							}
+							final Listview1Adapter adapter = new Listview1Adapter(chat_map);
+							listview1.setAdapter(adapter);
+							adapter.notifyDataSetChanged();
+						} catch (Exception _e) {
+							_e.printStackTrace();
+						}
 					}
+
 					@Override
 					public void onCancelled(DatabaseError _databaseError) {
 					}
 				});
 			}
-			
+
 			@Override
 			public void onCancelled(DatabaseError _param1) {
-				final String _errorCode = String.valueOf(_param1.getCode());
-				final String _errorMessage = _param1.getMessage();
-				
 			}
 		};
 		chat_data.addChildEventListener(_chat_data_child_listener);
 	}
 	private void initializeLogic() {
-		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS); w.setStatusBarColor(Color.parseColor("#5a9216"));
+		Window w = this.getWindow();w.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			w.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			w.setStatusBarColor(Color.parseColor("#5a9216"));
+		}
 		listview1.setDivider(null);
 		listview1.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
 		listview1.setStackFromBottom(true);
@@ -296,45 +288,6 @@ public class MoonchatActivity extends AppCompatActivity {
 	public void onBackPressed() {
 		finish();
 	}
-	private void getImage(int i) throws IOException {
-        if(i == chat_map.size()) {
-            final Listview1Adapter adapter = new Listview1Adapter(chat_map);
-            listview1.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
-            return;
-        }
-	    final ChatMessage _map = chat_map.get(i);
-	    if (!_map.getImageUrl().equals("")) {
-            final File image = File.createTempFile("temp_image", ".jpg", getExternalCacheDir());
-            final int finalI = i;
-            _storage.getReferenceFromUrl(_map.getImageUrl()).getFile(image).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Uri fileUri = FileProvider.getUriForFile(getApplicationContext(), getString(R.string.authorities), image);
-                    Bitmap img = null;
-                    try {
-                        img = MediaStore.Images.Media.getBitmap(getContentResolver(), fileUri);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    _map.setImage(img);
-                    chat_map.set(finalI, _map);
-                    boolean delete = image.delete();
-                    try {
-                        getImage(finalI+1);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-        } else {
-            try {
-                getImage(i+1);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 	public class Listview1Adapter extends BaseAdapter {
 		ArrayList<ChatMessage> _data;
 		public Listview1Adapter(ArrayList<ChatMessage> _arr) {
@@ -371,9 +324,9 @@ public class MoonchatActivity extends AppCompatActivity {
 			final ImageView bin = _v.findViewById(R.id.bin);
 			final TextView textview3 = _v.findViewById(R.id.textview3);
 			final ImageView attached_image = _v.findViewById(R.id.attached_image);
-			
-			width = Math.round(SketchwareUtil.getDisplayWidthPixels(getApplicationContext()) * 0.75d);
-			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int)width, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+			double width = Math.round(SketchwareUtil.getDisplayWidthPixels(getApplicationContext()) * 0.75d);
+			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) width, LinearLayout.LayoutParams.WRAP_CONTENT);
 			lp.setMargins(Math.round(ParametersUtil.dpsToPixels(8,getApplicationContext())), Math.round(ParametersUtil.dpsToPixels(8,getApplicationContext())), Math.round(ParametersUtil.dpsToPixels(8,getApplicationContext())), Math.round(ParametersUtil.dpsToPixels(8,getApplicationContext())));
 			linear1.setLayoutParams(lp);
 			if (_data.get(_position).getUid().equals(data.getString("id", ""))) {
@@ -401,7 +354,8 @@ public class MoonchatActivity extends AppCompatActivity {
 			}
             attached_image.setVisibility(View.GONE);
 			if(!_data.get(_position).getImageUrl().equals("")) {
-                attached_image.setImageBitmap((Bitmap) _data.get(_position).getImage());
+                String url = getItem(_position).getImageUrl();
+                Picasso.get().load(url).into(attached_image);
                 attached_image.setVisibility(View.VISIBLE);
             }
 			bin.setOnClickListener(new View.OnClickListener() {
@@ -426,7 +380,6 @@ public class MoonchatActivity extends AppCompatActivity {
             switch (requestCode) {
                 case 1:
                     Bitmap imageBitmap = FileUtil.getBitmap(uri, this);
-                    imageBitmap = DrawableUtil.getRotatedBitmap(imageBitmap, DrawableUtil.getRotation(mImageFileLocation));
                     imageBitmap = DrawableUtil.getResizedBitmap(imageBitmap, 512);
                     attached_image.setImageBitmap(imageBitmap);
                     attach_linear.setVisibility(View.VISIBLE);
@@ -434,7 +387,6 @@ public class MoonchatActivity extends AppCompatActivity {
                 case 2:
                     uri = data.getData();
                     imageBitmap = FileUtil.getBitmap(uri, this);
-                    imageBitmap = DrawableUtil.getRotatedBitmap(imageBitmap, DrawableUtil.getRotation(uri.toString()));
                     imageBitmap = DrawableUtil.getResizedBitmap(imageBitmap, 512);
                     attached_image.setImageBitmap(imageBitmap);
                     attach_linear.setVisibility(View.VISIBLE);

@@ -1,62 +1,74 @@
 package com.moonface.home;
 
-import android.annotation.SuppressLint;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.os.*;
-import android.provider.MediaStore;
+import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.NavigationView;
-import android.view.*;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.*;
-import android.content.*;
-import android.graphics.*;
-import android.util.*;
-import java.io.IOException;
-import java.util.*;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.widget.LinearLayout;
-
-import java.util.ArrayList;
-import android.widget.TextView;
-import android.widget.ImageView;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.EditText;
-import java.util.Timer;
-import java.util.TimerTask;
-import android.content.Intent;
-import android.net.Uri;
-import android.app.Activity;
-import android.content.SharedPreferences;
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.KeyEvent;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.graphics.Typeface;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.moonface.Util.DrawableUtil;
 import com.moonface.Util.ParametersUtil;
 import com.moonface.Util.PermissionsRequest;
-import com.moonface.Util.TimeUtil;
 import com.moonface.Util.SwipeExpander;
+import com.moonface.Util.TimeUtil;
+import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
     private Timer _timer = new Timer();
+    private FirebaseAuth userAuth = FirebaseAuth.getInstance();
+    private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 
     private DrawerLayout _drawer;
     private LinearLayout _applist_view;
@@ -64,7 +76,6 @@ public class HomeActivity extends AppCompatActivity {
 
     private String a = "";
     private String b = "";
-
 
     private ImageView back_imageview;
     private LinearLayout linear29;
@@ -96,8 +107,9 @@ public class HomeActivity extends AppCompatActivity {
     private Intent camera_int = new Intent();
     private Intent dialer_int = new Intent();
     private AlertDialog.Builder exitDialog;
-    private SharedPreferences auth;
     private Intent contact_us = new Intent();
+    private ProgressDialog prog;
+    private DatabaseReference userdata;
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
         super.onCreate(_savedInstanceState);
@@ -136,6 +148,7 @@ public class HomeActivity extends AppCompatActivity {
         NavigationView _nav_view = findViewById(R.id._nav_view);
 
         GridView gridview1 = _apps_view.findViewById(R.id.gridview1);
+        GridView gridview2 = _applist_view.findViewById(R.id.gridview2);
         back_imageview = _apps_view.findViewById(R.id.back_imageview);
         linear29 = _apps_view.findViewById(R.id.linear29);
         linear18 = _applist_view.findViewById(R.id.linear18);
@@ -148,10 +161,6 @@ public class HomeActivity extends AppCompatActivity {
         ImageView g_logo = _applist_view.findViewById(R.id.g_logo);
         ImageView imageview16 = _applist_view.findViewById(R.id.imageview16);
         edittext1 = _applist_view.findViewById(R.id.edittext1);
-        ImageView ic_dialer = _applist_view.findViewById(R.id.ic_dialer);
-        ImageView ic_moonchat = _applist_view.findViewById(R.id.ic_moonchat);
-        ImageView ic_email = _applist_view.findViewById(R.id.ic_email);
-        ImageView ic_camera = _applist_view.findViewById(R.id.ic_camera);
         _drawer_imageview2 = _nav_view.getHeaderView(0).findViewById(R.id.imageview2);
         _drawer_nickname = _nav_view.getHeaderView(0).findViewById(R.id.nickname);
         _drawer_email = _nav_view.getHeaderView(0).findViewById(R.id.email);
@@ -163,9 +172,14 @@ public class HomeActivity extends AppCompatActivity {
         _drawer_share = _nav_view.getMenu().findItem(R.id.share);
         _drawer_signout = _nav_view.getMenu().findItem(R.id.signout);
         _drawer_about = _nav_view.getMenu().findItem(R.id.about);
+
         data = getSharedPreferences("data", Activity.MODE_PRIVATE);
         exitDialog = new AlertDialog.Builder(this);
-        auth = getSharedPreferences("auth", Activity.MODE_PRIVATE);
+        prog = new ProgressDialog(this);
+        prog.setMessage(getString(R.string.retrieving_data));
+        prog.setIndeterminate(true);
+        prog.setCancelable(false);
+
         _nav_view.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -205,7 +219,12 @@ public class HomeActivity extends AppCompatActivity {
                                     startActivity(Intent.createChooser(ishare,getString(R.string.share_using_label)));
                                 }
                                 if(menuItem == _drawer_signout){
-                                    auth.edit().putString("logout", "1").apply();
+                                    userdata = _firebase.getReference("users").child(userAuth.getCurrentUser().getUid());
+                                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                                    if (deviceToken != null) {
+                                        userdata.child("device_token").child(deviceToken).removeValue();
+                                    }
+                                    userAuth.signOut();
                                     intent.setClass(getApplicationContext(), MainActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(intent);
@@ -282,114 +301,6 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-
-        ic_dialer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_up);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        view.setScaleX(1.0f);
-                        view.setScaleY(1.0f);
-                        dialer_int.setClass(getApplicationContext(), DialerActivity.class);
-                        startActivity(dialer_int);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                view.startAnimation(animation);
-            }
-        });
-
-        ic_moonchat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_up);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        view.setScaleX(1.0f);
-                        view.setScaleY(1.0f);
-                        moonchat_int.setClass(getApplicationContext(), MoonchatActivity.class);
-                        startActivity(moonchat_int);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                view.startAnimation(animation);
-            }
-        });
-
-        ic_email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_up);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        view.setScaleX(1.0f);
-                        view.setScaleY(1.0f);
-                        messenger_int.setClass(getApplicationContext(), InboxActivity.class);
-                        startActivity(messenger_int);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                view.startAnimation(animation);
-            }
-        });
-
-        ic_camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View view) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_up);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        view.setScaleX(1.0f);
-                        view.setScaleY(1.0f);
-                        camera_int.setClass(getApplicationContext(), CameraActivity.class);
-                        startActivity(camera_int);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                view.startAnimation(animation);
-            }
-        });
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
@@ -454,7 +365,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-        Drawable[] drawables = new Drawable[]{
+        Drawable[] drawables1 = new Drawable[]{
                 getResources().getDrawable(R.drawable.browser),
                 getResources().getDrawable(R.drawable.calculator),
                 getResources().getDrawable(R.drawable.market),
@@ -468,7 +379,7 @@ public class HomeActivity extends AppCompatActivity {
                 getResources().getDrawable(R.drawable.passwords),
                 getResources().getDrawable(R.drawable.play_store)
         };
-        Intent[] intents = new Intent[]{
+        Intent[] intents1 = new Intent[]{
                 new Intent().setClass(this,SearchActivity.class).putExtra("query", "-"),
                 new Intent().setClass(this,CalculatorActivity.class),
                 new Intent().setClass(this,ShoppingListActivity.class),
@@ -482,22 +393,33 @@ public class HomeActivity extends AppCompatActivity {
                 new Intent().setClass(this,PasswordsActivity.class),
                 new Intent(getPackageManager().getLaunchIntentForPackage("com.android.vending"))
         };
-        GridAdapter gridAdapter = new GridAdapter(this, drawables, intents);
-        gridview1.setAdapter(gridAdapter);
-        new Thread(new Runnable() {
-            public void run() {
-                final AppAdapter appAdapter = new AppAdapter(getApplicationContext());
-                listview1.post(new Runnable() {
-                    public void run() {
-                        listview1.setAdapter(appAdapter);
-                    }
-                });
+        GridAdapter gridAdapter1 = new GridAdapter(this, drawables1, intents1);
+        gridview1.setAdapter(gridAdapter1);
+        Drawable[] drawables2 = new Drawable[]{
+                getResources().getDrawable(R.drawable.dialer),
+                getResources().getDrawable(R.drawable.chat),
+                getResources().getDrawable(R.drawable.email),
+                getResources().getDrawable(R.drawable.camera)
+        };
+        Intent[] intents2 = new Intent[]{
+                new Intent().setClass(this,DialerActivity.class),
+                new Intent().setClass(this,MoonchatActivity.class),
+                new Intent().setClass(this,InboxActivity.class),
+                new Intent().setClass(this,CameraActivity.class)
+        };
+        GridAdapter gridAdapter2 = new GridAdapter(this, drawables2, intents2, 5);
+        gridAdapter2.setBackDrawable(getResources().getDrawable(R.drawable.dock_app));
+        gridview2.setAdapter(gridAdapter2);
+
+        edittext1.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH) {
+                    button1.performClick();
+                    return true;
+                }
+                return false;
             }
-        }).start();
-    }
-    private void initializeLogic() {
-        edittext1.setOnEditorActionListener(new EditText.OnEditorActionListener() { public boolean onEditorAction(TextView v, int actionId, KeyEvent event) { if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH) { button1.performClick(); return true; } return false;}});
-        _set_background();
+        });
         textview2.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/fluent_sans_regular.ttf"), 0);
         textview3.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/fluent_sans_regular.ttf"), 1);
         TimerTask checktouch = new TimerTask() {
@@ -514,18 +436,72 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
         _timer.scheduleAtFixedRate(checktouch, 0, 1000);
+        new Thread(new Runnable() {
+            public void run() {
+                final AppAdapter appAdapter = new AppAdapter(getApplicationContext());
+                listview1.post(new Runnable() {
+                    public void run() {
+                        listview1.setAdapter(appAdapter);
+                    }
+                });
+            }
+        }).start();
+    }
+    private void initializeLogic() {
+        _set_background();
         _drawer_nickname.setText(data.getString("nickname",""));
         _drawer_email.setText(data.getString("email",""));
-        try {
-            Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), SignInFragment.profileUri);
-            imageBitmap = DrawableUtil.getResizedBitmap(imageBitmap, 256);
-            imageBitmap = DrawableUtil.getSquaredBitmap(imageBitmap);
-            imageBitmap = DrawableUtil.getCircleBitmap(imageBitmap, _drawer_imageview2.getWidth());
-            _drawer_imageview2.setImageBitmap(imageBitmap);
+        FirebaseUser currentUser = userAuth.getCurrentUser();
+        prog.show();
+        if (currentUser != null) {
+            _logdata(currentUser);
+        } else {
+            signIn();
         }
-        catch (IOException io){
-            Log.e("", io.toString());
+    }
+
+    private void _logdata(final FirebaseUser user) {
+        userdata = _firebase.getReference("users").child(user.getUid());
+        String deviceToken = FirebaseInstanceId.getInstance().getToken();
+        if (deviceToken != null) {
+            userdata.child("device_token").child(deviceToken).setValue(deviceToken);
         }
+        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot _dataSnapshot) {
+                HashMap<String, Object> data_update = new HashMap<>();
+                try {
+                    data_update = (HashMap<String, Object>) _dataSnapshot.getValue();
+                } catch (Exception _e) {
+                    _e.printStackTrace();
+                }
+                data.edit().putString("nickname", data_update.get("name").toString()).apply();
+                data.edit().putBoolean("admin", Boolean.valueOf(data_update.get("admin").toString())).apply();
+                data.edit().putString("background", data_update.get("background").toString()).apply();
+                Picasso.get().load(data_update.get("profile_pic_url").toString()).transform(new DrawableUtil.CircleTransform()).into(_drawer_imageview2);
+                data.edit().putString("email", user.getEmail()).apply();
+                data.edit().putString("id", user.getUid()).apply();
+                data.edit().putString("profile_pic", data_update.get("profile_pic_url").toString()).apply();
+                _set_background();
+                _drawer_nickname.setText(data.getString("nickname",""));
+                _drawer_email.setText(data.getString("email",""));
+                prog.dismiss();
+                data_update.clear();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError _databaseError) {
+                Toast.makeText(getApplicationContext(), R.string.cant_find_data_message, Toast.LENGTH_SHORT).show();
+                prog.dismiss();
+                signIn();
+            }
+        });
+    }
+    private void signIn(){
+        Intent intent = new Intent();
+        intent.setClass(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private final int REQ_CODE_SPEECH_INPUT=100;
@@ -569,44 +545,44 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        if(PermissionsRequest.isGranted(PermissionsRequest.WRITE_EXTERNAL_STORAGE, getApplicationContext())) {
-            _set_background();
-        } else {
-            PermissionsRequest permissionsRequest = new PermissionsRequest(this, new String[]{PermissionsRequest.WRITE_EXTERNAL_STORAGE});
-            permissionsRequest.showRequest();
-        }
+        _set_background();
     }
 
     private void _set_background () {
-        if (data.getString("background", "").equals("")) {
-            data.edit().putString("background", "0").apply();
-        }
-        if (data.getString("background", "").equals("0")) {
-            back_imageview.setImageDrawable(DrawableUtil.getPhoneBackgroundDrawable(this));
-        }
-        if (data.getString("background", "").equals("1")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.deer));
-        }
-        if (data.getString("background", "").equals("2")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.eiffel_tower));
-        }
-        if (data.getString("background", "").equals("3")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.forest));
-        }
-        if (data.getString("background", "").equals("4")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.milky_way));
-        }
-        if (data.getString("background", "").equals("5")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.new_york));
-        }
-        if (data.getString("background", "").equals("6")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.pyramids));
-        }
-        if (data.getString("background", "").equals("7")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.sunrise));
-        }
-        if (data.getString("background", "").equals("8")) {
-            back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.village));
+        if(PermissionsRequest.isGranted(PermissionsRequest.READ_EXTERNAL_STORAGE, this)) {
+            if (data.getString("background", "").equals("")) {
+                data.edit().putString("background", "0").apply();
+            }
+            if (data.getString("background", "").equals("0")) {
+                back_imageview.setImageDrawable(DrawableUtil.getPhoneBackgroundDrawable(this));
+            }
+            if (data.getString("background", "").equals("1")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.deer));
+            }
+            if (data.getString("background", "").equals("2")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.eiffel_tower));
+            }
+            if (data.getString("background", "").equals("3")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.forest));
+            }
+            if (data.getString("background", "").equals("4")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.milky_way));
+            }
+            if (data.getString("background", "").equals("5")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.new_york));
+            }
+            if (data.getString("background", "").equals("6")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.pyramids));
+            }
+            if (data.getString("background", "").equals("7")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.sunrise));
+            }
+            if (data.getString("background", "").equals("8")) {
+                back_imageview.setImageDrawable(getResources().getDrawable(R.drawable.village));
+            }
+        } else {
+            PermissionsRequest request = new PermissionsRequest(HomeActivity.this, new String[]{PermissionsRequest.READ_EXTERNAL_STORAGE});
+            request.showRequest();
         }
     }
 
@@ -679,8 +655,8 @@ public class HomeActivity extends AppCompatActivity {
         return getResources().getDisplayMetrics().heightPixels;
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        if(PermissionsRequest.isGranted(PermissionsRequest.WRITE_EXTERNAL_STORAGE, getApplicationContext())){
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        if(PermissionsRequest.isGranted(PermissionsRequest.READ_EXTERNAL_STORAGE, this)){
             _set_background();
         } else {
             Toast.makeText(getApplicationContext(), getString(R.string.permission_denied_message), Toast.LENGTH_SHORT).show();

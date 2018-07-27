@@ -28,23 +28,19 @@
             <LinearLayout
                 android:id="@+id/linear29"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="?android:actionBarSize"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="32dp"
                 android:alpha="1"
                 android:gravity="bottom|center_horizontal"
                 android:orientation="vertical"
                 android:paddingTop="?android:actionBarSize">
 
                 <LinearLayout
-                    android:id="@+id/linear30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:orientation="horizontal"
-                    android:paddingBottom="16dp"
-                    android:paddingTop="16dp">
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -55,13 +51,12 @@
                         <LinearLayout
                             android:id="@+id/linear_extension"
                             android:layout_width="296dp"
-                            android:layout_height="60dp"
+                            android:layout_height="40dp"
                             android:background="@drawable/time_back"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
                             <LinearLayout
-                                android:id="@+id/linear_date"
                                 android:layout_width="180dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal|center_vertical"
@@ -79,15 +74,14 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/linear_time"
                                 android:layout_width="116dp"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/time_peek_back"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:orientation="vertical"
                                 android:paddingBottom="8dp"
-                                android:paddingStart="8dp"
                                 android:paddingEnd="24dp"
+                                android:paddingStart="8dp"
                                 android:paddingTop="8dp">
 
                                 <TextView
@@ -109,10 +103,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:columnWidth="60dp"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:numColumns="6"
-                    android:stretchMode="spacingWidthUniform"
+                    android:padding="16dp"
                     android:verticalSpacing="16dp"></GridView>
 
             </LinearLayout>

@@ -40,7 +40,7 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
 	
 	private void initialize() {
 		
-		_toolbar = (Toolbar) findViewById(R.id._toolbar);
+		_toolbar = findViewById(R.id._toolbar);
 		setSupportActionBar(_toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);

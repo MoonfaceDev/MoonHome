@@ -1,49 +1,50 @@
 package com.moonface.home;
 
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.NotificationManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.*;
-import android.widget.*;
-import android.content.*;
-import android.media.*;
-import android.util.*;
-
-import java.util.*;
-
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.graphics.Point;
+import android.media.AudioManager;
+import android.net.Uri;
+import android.os.BatteryManager;
+import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import java.util.HashMap;
-import java.util.ArrayList;
-import android.widget.LinearLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Spinner;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.Display;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SeekBar;
-import android.content.Intent;
-import android.net.Uri;
-import android.app.Activity;
-import android.content.SharedPreferences;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import android.animation.ObjectAnimator;
-import java.util.Timer;
-import java.util.TimerTask;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.widget.AdapterView;
-import android.view.View;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
+import java.util.Random;
 
 public class SettingsActivity extends AppCompatActivity {
 	
-	private Timer _timer = new Timer();
 	private FirebaseDatabase _firebase = FirebaseDatabase.getInstance();
 	
 	private Toolbar _toolbar;
@@ -51,12 +52,36 @@ public class SettingsActivity extends AppCompatActivity {
 	private String server_version = "";
 	private String device_version = "";
 	private HashMap<String, Object> update_background = new HashMap<>();
-	private double batLevel = 0;
-	private double firstRun1 = 0;
-	private double firstRun2 = 0;
-	private double firstRun3 = 0;
 	private AudioManager audioManager;
-	private NotificationManager n;
+	private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver(){
+		@Override
+		public void onReceive(Context ctxt, Intent intent) {
+			int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
+			textview11.setText(String.valueOf((level)).concat("%"));
+			_setBatIcon(level);
+		}
+	};
+    private BroadcastReceiver mVolInfoReceiver = new BroadcastReceiver(){
+        @Override
+        public void onReceive(Context ctxt, Intent intent) {
+            seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+            seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
+            seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM) - 1);
+        }
+    };
+    private BroadcastReceiver mDndInfoReceiver = new BroadcastReceiver(){
+        @Override
+        public void onReceive(Context ctxt, Intent intent) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                NotificationManager n = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                if (n != null && n.getCurrentInterruptionFilter() != NotificationManager.INTERRUPTION_FILTER_ALL) {
+                    seekbar2.setEnabled(false);
+                } else {
+                    seekbar2.setEnabled(true);
+                }
+            }
+        }
+    };
 	
 	private ArrayList<String> background_list = new ArrayList<>();
 
@@ -84,7 +109,6 @@ public class SettingsActivity extends AppCompatActivity {
 	private SharedPreferences data;
 	private DatabaseReference users_data = _firebase.getReference("users");
 	private ObjectAnimator reloadAnimation = new ObjectAnimator();
-	private TimerTask batteryCheck;
 	private AlertDialog.Builder descriptionDialog;
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -107,7 +131,6 @@ public class SettingsActivity extends AppCompatActivity {
 			}
 		});
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		n = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 		background = findViewById(R.id.background);
 		linear_moonface_version = findViewById(R.id.linear_moonface_version);
 		textview9 = findViewById(R.id.textview9);
@@ -335,17 +358,8 @@ public class SettingsActivity extends AppCompatActivity {
 			@Override
 			public void onProgressChanged (SeekBar _param1, int _param2, boolean _param3) {
 				final int _progressValue = _param2;
-				if (firstRun1 == 0) {
-					firstRun1 = 1;
-					seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-					audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), 0);
-				}
-				else {
-					if (Build.VERSION.SDK_INT >= 23) {
-						if (n.isNotificationPolicyAccessGranted()) {
-							audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, _progressValue, 0);
-						}
-					}
+                if (_param3) {
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, _progressValue, 0);
 				}
 			}
 			
@@ -364,18 +378,9 @@ public class SettingsActivity extends AppCompatActivity {
 			@Override
 			public void onProgressChanged (SeekBar _param1, int _param2, boolean _param3) {
 				final int _progressValue = _param2;
-				if (firstRun2 == 0) {
-					firstRun2 = 1;
-					seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
-					audioManager.setStreamVolume(AudioManager.STREAM_RING, audioManager.getStreamVolume(AudioManager.STREAM_RING), 0);
-				}
-				else {
-                    if (Build.VERSION.SDK_INT >= 23) {
-                        if (n.isNotificationPolicyAccessGranted()) {
-                            audioManager.setStreamVolume(AudioManager.STREAM_RING, _progressValue, 0);
-                        }
-                    }
-				}
+                if (_param3) {
+                    audioManager.setStreamVolume(AudioManager.STREAM_RING, _progressValue, 0);
+                }
 			}
 			
 			@Override
@@ -393,18 +398,9 @@ public class SettingsActivity extends AppCompatActivity {
 			@Override
 			public void onProgressChanged (SeekBar _param1, int _param2, boolean _param3) {
 				final int _progressValue = _param2;
-				if (firstRun3 == 0) {
-					firstRun3 = 1;
-					seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM));
-					audioManager.setStreamVolume(AudioManager.STREAM_ALARM, audioManager.getStreamVolume(AudioManager.STREAM_ALARM), 0);
-				}
-				else {
-                    if (Build.VERSION.SDK_INT >= 23) {
-                        if (n.isNotificationPolicyAccessGranted()) {
-                            audioManager.setStreamVolume(AudioManager.STREAM_ALARM, _progressValue, 0);
-                        }
-                    }
-				}
+                if (_param3) {
+                    audioManager.setStreamVolume(AudioManager.STREAM_ALARM, _progressValue + 1, 0);
+                }
 			}
 			
 			@Override
@@ -419,93 +415,67 @@ public class SettingsActivity extends AppCompatActivity {
 		});
 	}
 	private void initializeLogic() {
-		background_list.add(getString(R.string.default_background));
-		background_list.add(getString(R.string.deer_background));
-		background_list.add(getString(R.string.eiffel_tower));
-		background_list.add(getString(R.string.forest_background));
-		background_list.add(getString(R.string.milky_way));
-		background_list.add(getString(R.string.new_york_background));
-		background_list.add(getString(R.string.pyramids_background));
-		background_list.add(getString(R.string.sunrise_background));
-		background_list.add(getString(R.string.village_background));
-		model.setText(Build.MANUFACTURER.concat(" ".concat(Build.MODEL)));
-		language_string = Locale.getDefault().getDisplayLanguage();
-		android_version.setText(Build.VERSION.RELEASE);
-		DisplayMetrics dm = new DisplayMetrics();
-		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		int width = dm.widthPixels;
-		int height = dm.heightPixels;
-		background.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, background_list));
-		device_language.setText(language_string);
-		screen_size.setText(String.valueOf((long)(width)).concat("x".concat(String.valueOf((long)(height)))));
-		background.setSelection((int)(Double.parseDouble(data.getString("background", ""))));
-		info.addListenerForSingleValueEvent(new ValueEventListener() {
-			@Override
-			public void onDataChange(DataSnapshot _dataSnapshot) {
-				HashMap<Object, String> infoMap = new HashMap<>();
-				try {
-					infoMap = (HashMap<Object, String>) _dataSnapshot.getValue();
-				}
-				catch (Exception _e) {
-					_e.printStackTrace();
-				}
-				server_version = infoMap.get("last version").toString();
-				if (server_version.equals(device_version)) {
-					textview9.setText(getString(R.string.updated_to_label).concat(device_version));
-				}
-				else {
+        background_list.add(getString(R.string.default_background));
+        background_list.add(getString(R.string.deer_background));
+        background_list.add(getString(R.string.eiffel_tower));
+        background_list.add(getString(R.string.forest_background));
+        background_list.add(getString(R.string.milky_way));
+        background_list.add(getString(R.string.new_york_background));
+        background_list.add(getString(R.string.pyramids_background));
+        background_list.add(getString(R.string.sunrise_background));
+        background_list.add(getString(R.string.village_background));
+        model.setText(Build.MANUFACTURER.concat(" ".concat(Build.MODEL)));
+        language_string = Locale.getDefault().getDisplayLanguage();
+        android_version.setText(Build.VERSION.RELEASE);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getRealSize(size);
+        int width = size.x;
+        int height = size.y;
+        background.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, background_list));
+        device_language.setText(language_string);
+        screen_size.setText(String.valueOf((long) (width)).concat("x".concat(String.valueOf((long) (height)))));
+        background.setSelection((int) (Double.parseDouble(data.getString("background", ""))));
+        info.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot _dataSnapshot) {
+                HashMap<Object, String> infoMap = new HashMap<>();
+                try {
+                    infoMap = (HashMap<Object, String>) _dataSnapshot.getValue();
+                } catch (Exception _e) {
+                    _e.printStackTrace();
+                }
+                server_version = infoMap.get("last version").toString();
+                if (server_version.equals(device_version)) {
+                    textview9.setText(getString(R.string.updated_to_label).concat(device_version));
+                } else {
                     textview9.setText(getString(R.string.update_label).concat(server_version.concat(getString(R.string.is_available_label))));
-				}
-			}
-			@Override
-			public void onCancelled(DatabaseError _databaseError) {
-			}
-		});
-		batteryCheck = new TimerTask() {
-			@Override
-			public void run() {
-				runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						
-						BatteryManager bm = (BatteryManager)getSystemService(BATTERY_SERVICE);
-						batLevel = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
-						textview11.setText(String.valueOf((long)(batLevel)).concat("%"));
-						_setBatIcon(batLevel);
-					}
-				});
-			}
-		};
-		_timer.scheduleAtFixedRate(batteryCheck, 0, 1000);
-        if(Build.VERSION.SDK_INT >= 23) {
-            NotificationManager n = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-            if (n.isNotificationPolicyAccessGranted()) {
-                seekbar1.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-                seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+                }
+            }
 
-                seekbar2.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_RING));
-                seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
-
-                seekbar3.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM));
-                seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM));
+            @Override
+            public void onCancelled(DatabaseError _databaseError) {
+            }
+        });
+        registerReceiver(mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+        registerReceiver(mVolInfoReceiver, new IntentFilter("android.media.VOLUME_CHANGED_ACTION"));
+        registerReceiver(mDndInfoReceiver, new IntentFilter("android.app.action.INTERRUPTION_FILTER_CHANGED"));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            NotificationManager n = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            if (n != null && n.getCurrentInterruptionFilter() != NotificationManager.INTERRUPTION_FILTER_ALL) {
+                seekbar2.setEnabled(false);
             } else {
-                Toast.makeText(getApplicationContext(), R.string.do_not_disturb_access_message, Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
-                startActivityForResult(intent, 1);
+                seekbar2.setEnabled(true);
             }
         }
-        else{
-            AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            seekbar1.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-            seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-
-            seekbar2.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_RING));
-            seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
-
-            seekbar3.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM));
-            seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM));
-        }
-	}
+        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        seekbar1.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+        seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        seekbar2.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_RING));
+        seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
+        seekbar3.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM) - 1);
+        seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM) - 1);
+    }
 	@Override
 	public void onBackPressed() {
 		finish();
@@ -536,28 +506,6 @@ public class SettingsActivity extends AppCompatActivity {
 			imageview10.setImageResource(R.drawable.ic_battery_alert_grey);
 		}
 	}
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    if (requestCode == 1) {
-            if (Build.VERSION.SDK_INT >= 23) {
-                if (n.isNotificationPolicyAccessGranted()) {
-                    seekbar1.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-                    seekbar1.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
-
-                    seekbar2.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_RING));
-                    seekbar2.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_RING));
-
-                    seekbar3.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_ALARM));
-                    seekbar3.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_ALARM));
-                    Toast.makeText(getApplicationContext(), R.string.access_granted_message, Toast.LENGTH_SHORT).show();
-                } else {
-                    seekbar1.setEnabled(false);
-                    seekbar2.setEnabled(false);
-                    seekbar3.setEnabled(false);
-                    Toast.makeText(getApplicationContext(), R.string.access_denied_message, Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
 
     @Deprecated
 	public void showMessage(String _s) {

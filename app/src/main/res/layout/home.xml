@@ -20,15 +20,15 @@
             android:id="@+id/_applist_view"
             layout="@layout/app_list" />
     </android.support.design.widget.CoordinatorLayout>
+
 	<android.support.design.widget.NavigationView
 		android:id="@+id/_nav_view"
-		android:layout_width="320dp"
+		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
 		android:layout_gravity="start"
 		android:fitsSystemWindows="true"
-		app:menu="@menu/_drawer_view"
-        app:headerLayout="@layout/_drawer_home"
-        app:itemTextColor="@null"
-        app:itemIconTint="@null">
-	</android.support.design.widget.NavigationView>
+		app:headerLayout="@layout/_drawer_home"
+		app:itemIconTint="@null"
+		app:itemTextColor="@null"
+		app:menu="@menu/_drawer_view"/>
 </android.support.v4.widget.DrawerLayout>

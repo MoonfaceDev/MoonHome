@@ -2,11 +2,8 @@ package com.moonface.Util;
 
 import android.app.WallpaperManager;
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -16,31 +13,14 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.PictureDrawable;
-import android.graphics.drawable.RippleDrawable;
-import android.media.ExifInterface;
-import android.net.Uri;
-import android.os.Environment;
-import android.support.v4.content.FileProvider;
-import android.util.Log;
 
-import com.moonface.home.R;
+import com.squareup.picasso.Transformation;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Random;
 
 public class DrawableUtil {
-    public static final String ANDROID_RESOURCE = "android.resource://";
-    public static final String FORESLASH = "/";
     public static Drawable roundedBackground(float _radius, String _backcolor, int _strokewidth, String _strokecolor) {
         GradientDrawable _gradientDrawable = new GradientDrawable();
         _gradientDrawable.setColor(Color.parseColor(_backcolor));
@@ -55,10 +35,7 @@ public class DrawableUtil {
         _gradientDrawable.setCornerRadius(_radius);
         return _gradientDrawable;
     }
-    public static Drawable rippleDrawable(String _ripplecolor, String _backcolor){
-        return new RippleDrawable(new ColorStateList(new int[][]{new int[]{}}, new int[]{ Color.parseColor(_ripplecolor)}), new ColorDrawable(Color.parseColor(_backcolor)), null);
-    }
-    public static Bitmap getCircleBitmap(Bitmap bitmap, int pixels) {
+    public static Bitmap getCircleBitmap(Bitmap bitmap) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
                 bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
@@ -122,26 +99,6 @@ public class DrawableUtil {
 
         return Bitmap.createScaledBitmap(image, width, height, true);
     }
-    public static Bitmap getReadyBitmap(Bitmap image, int size){
-        int width = image.getWidth();
-        int height = image.getHeight();
-        float ratio;
-        if (width > height) {
-            ratio = (float)size / (float)width;
-            height = (int)((float)height * ratio);
-            width = size;
-        } else {
-            ratio = (float)size / (float)height;
-            width = (int)((float)width * ratio);
-            height = size;
-        }
-        return Bitmap.createScaledBitmap(image, width, height, true);
-    }
-    public static Drawable getResizedDrawable(Drawable drawable, int maxSize, Resources resources) {
-        Bitmap image = ((BitmapDrawable)drawable).getBitmap();
-        image = Bitmap.createScaledBitmap(image, 50, 50, false);
-        return new BitmapDrawable(resources, image);
-    }
     public static Bitmap getRotatedBitmap(Bitmap source, float angle)
     {
         Matrix matrix = new Matrix();
@@ -161,33 +118,40 @@ public class DrawableUtil {
                 "#795548","#9e9e9e","#607d8b"};
         return colors[new Random().nextInt(colors.length)];
     }
-    public static int getRotation(String path) {
-        boolean var1 = false;
+    public static Drawable BitmapToDrawable(Bitmap bitmap, Context context){
+        return new BitmapDrawable(context.getResources(), bitmap);
+    }
+    public static class CircleTransform implements Transformation {
+        @Override
+        public Bitmap transform(Bitmap source) {
+            int size = Math.min(source.getWidth(), source.getHeight());
 
-        try {
-            ExifInterface var2 = new ExifInterface(path);
-            int var3 = var2.getAttributeInt("Orientation", -1);
-            short var5;
-            switch (var3) {
-                case 3:
-                    var5 = 180;
-                    break;
-                case 4:
-                case 5:
-                case 7:
-                default:
-                    var5 = 0;
-                    break;
-                case 6:
-                    var5 = 90;
-                    break;
-                case 8:
-                    var5 = 270;
+            int x = (source.getWidth() - size) / 2;
+            int y = (source.getHeight() - size) / 2;
+
+            Bitmap squaredBitmap = Bitmap.createBitmap(source, x, y, size, size);
+            if (squaredBitmap != source) {
+                source.recycle();
             }
 
-            return var5;
-        } catch (IOException var4) {
-            return 0;
+            Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
+
+            Canvas canvas = new Canvas(bitmap);
+            Paint paint = new Paint();
+            BitmapShader shader = new BitmapShader(squaredBitmap, BitmapShader.TileMode.CLAMP, BitmapShader.TileMode.CLAMP);
+            paint.setShader(shader);
+            paint.setAntiAlias(true);
+
+            float r = size/2f;
+            canvas.drawCircle(r, r, r, paint);
+
+            squaredBitmap.recycle();
+            return bitmap;
+        }
+
+        @Override
+        public String key() {
+            return "circle";
         }
     }
 }

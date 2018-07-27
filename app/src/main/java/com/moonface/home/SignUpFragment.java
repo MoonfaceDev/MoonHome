@@ -2,19 +2,12 @@ package com.moonface.home;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +15,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,17 +32,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.moonface.Util.DrawableUtil;
-import com.moonface.Util.PermissionsRequest;
 import com.moonface.Util.TimeUtil;
 
-import java.io.IOException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import static android.content.Context.INPUT_METHOD_SERVICE;
 
 public class SignUpFragment extends Fragment {
 
@@ -202,7 +188,6 @@ public class SignUpFragment extends Fragment {
                 viewArrayList.add(openlogin_tab);
                 viewArrayList.add(email_input_layout);
                 viewArrayList.add(password_input_layout);
-                viewArrayList.add(checkbox1);
                 viewArrayList.add(tac_button);
                 viewArrayList.add(login_label);
                 ArrayList<String> stringArrayList = new ArrayList<>();
@@ -212,7 +197,6 @@ public class SignUpFragment extends Fragment {
                 stringArrayList.add("tab_button");
                 stringArrayList.add("email_input_layout");
                 stringArrayList.add("password_input_layout");
-                stringArrayList.add("checkbox");
                 stringArrayList.add("button");
                 stringArrayList.add("sign_label");
                 MainActivity.setCurrentFragment(getActivity().getSupportFragmentManager(), new SignInFragment(), viewArrayList, stringArrayList);
@@ -227,11 +211,7 @@ public class SignUpFragment extends Fragment {
                 if (_success) {
                     data.edit().putString("email", FirebaseAuth.getInstance().getCurrentUser().getEmail()).commit();
                     data.edit().putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid()).commit();
-                    try {
-                        _signdata();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    _signdata();
                 }
                 else {
                     SketchwareUtil.showMessage(getContext(), _errorMessage);
@@ -254,7 +234,7 @@ public class SignUpFragment extends Fragment {
                     _e.printStackTrace();
                 }
                 position = 0;
-                for(int _repeat63 = 0; _repeat63 < (int)(list_check.size()); _repeat63++) {
+                for(int _repeat63 = 0; _repeat63 < list_check.size(); _repeat63++) {
                     nicknames.add(list_check.get((int)position).get("name").toString());
                     position++;
                 }
@@ -264,7 +244,7 @@ public class SignUpFragment extends Fragment {
             }
         });
     }
-    private void _signdata () throws IOException {
+    private void _signdata () {
         data.edit().putString("nickname", nickname.getText().toString()).apply();
         data.edit().putBoolean("admin", admin).apply();
         data.edit().putString("id", FirebaseAuth.getInstance().getCurrentUser().getUid()).apply();
@@ -283,33 +263,39 @@ public class SignUpFragment extends Fragment {
         profile_pics.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).putFile(MainActivity.uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                SketchwareUtil.showMessage(getContext(), getString(R.string.accound_created));
-                ArrayList<View> viewArrayList = new ArrayList<>();
-                viewArrayList.add(signup_button);
-                viewArrayList.add(email_signup);
-                viewArrayList.add(password_signup);
-                viewArrayList.add(openlogin_tab);
-                viewArrayList.add(email_input_layout);
-                viewArrayList.add(password_input_layout);
-                viewArrayList.add(checkbox1);
-                viewArrayList.add(tac_button);
-                viewArrayList.add(login_label);
-                ArrayList<String> stringArrayList = new ArrayList<>();
-                stringArrayList.add("sign_button");
-                stringArrayList.add("email");
-                stringArrayList.add("password");
-                stringArrayList.add("tab_button");
-                stringArrayList.add("email_input_layout");
-                stringArrayList.add("password_input_layout");
-                stringArrayList.add("checkbox");
-                stringArrayList.add("button");
-                stringArrayList.add("sign_label");
-                MainActivity.setCurrentFragment(getActivity().getSupportFragmentManager(), new SignInFragment(), viewArrayList, stringArrayList);
-                data_update = new HashMap<>();
-                data_update.put("profile_pic_url", taskSnapshot.getStorage().getDownloadUrl().toString());
-                userdata.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(data_update);
-                data_update.clear();
-                prog.dismiss();
+                taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Boolean delete = new File(MainActivity.uri.toString()).delete();
+                        SketchwareUtil.showMessage(getContext(), getString(R.string.accound_created));
+                        ArrayList<View> viewArrayList = new ArrayList<>();
+                        viewArrayList.add(signup_button);
+                        viewArrayList.add(email_signup);
+                        viewArrayList.add(password_signup);
+                        viewArrayList.add(openlogin_tab);
+                        viewArrayList.add(email_input_layout);
+                        viewArrayList.add(password_input_layout);
+                        viewArrayList.add(checkbox1);
+                        viewArrayList.add(tac_button);
+                        viewArrayList.add(login_label);
+                        ArrayList<String> stringArrayList = new ArrayList<>();
+                        stringArrayList.add("sign_button");
+                        stringArrayList.add("email");
+                        stringArrayList.add("password");
+                        stringArrayList.add("tab_button");
+                        stringArrayList.add("email_input_layout");
+                        stringArrayList.add("password_input_layout");
+                        stringArrayList.add("checkbox");
+                        stringArrayList.add("button");
+                        stringArrayList.add("sign_label");
+                        MainActivity.setCurrentFragment(getActivity().getSupportFragmentManager(), new SignInFragment(), viewArrayList, stringArrayList);
+                        data_update = new HashMap<>();
+                        data_update.put("profile_pic_url", uri.toString());
+                        userdata.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(data_update);
+                        data_update.clear();
+                        prog.dismiss();
+                    }
+                });
             }
         });
     }
